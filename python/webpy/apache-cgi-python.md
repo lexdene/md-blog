@@ -133,7 +133,7 @@ apache会对stdout进行一些处理。
 	GATEWAY_INTERFACE
 	REMOTE_PORT
 
-## 三，get参数
+## 三、get参数
 最常用的向服务器提交参数的方法就是get。
 我们这里用curl来模拟：
 
@@ -146,7 +146,7 @@ apache会对stdout进行一些处理。
 在这里，
 我们需要手工地按照'&'来切分各个query段。
 
-## 四，post参数
+## 四、post参数
 除了get以外，
 用户名、密码、文件上传等通常都是使用post来提交。
 那么cgi脚本中如何获得post的数据呢？
@@ -154,7 +154,6 @@ apache会对stdout进行一些处理。
 代码改成：
 
 	#!/usr/bin/env python
-	import os
 	print 'Content-Type: text/html\n\n'
 	while True:
 		i = raw_input()
@@ -207,12 +206,13 @@ apache有日志功能，我们的cgi脚本能输出到apache的日志中？
 
 ## 六、总结
 cgi的接口如此的简单，
-使用的仅仅是stdin、stdout、stderr、环境变量四个最常用的进行间交换数据的方式。
+使用的仅仅是stdin、stdout、stderr、环境变量四个最常用的进程间交换数据的方式。
 而且几乎所有语言都能够处理这四项内容。
 剩下的事情，
-一方面是http协议规定的东西，
+
+* http协议规定的东西，
 例如在http header添加cookie段可以在浏览器端生成cookie。
-另一方面则是编程语言自己来处理的事情，
+* 编程语言自己来处理的事情，
 包括数据库、session、文件读写等。
 
 有空也用c语言写一个吧。
