@@ -15,7 +15,7 @@
 文中错误在所难免，
 希望大家能够不吝赐教。
 
-## 首先，配置apache、htaccess
+## 首先、配置apache、htaccess
 网站根目录为/var/www，
 我们放试验脚本的目录为/var/www/python-cgi。
 
