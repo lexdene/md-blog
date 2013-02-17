@@ -97,36 +97,38 @@ E-mail:
 ### 3.Python
 #### 3.1.Python程序设计
 
-	掌握Python的语法及部分高级用法，如：
-	1. 判断、循环、函数、类；
-	2. 继承、装饰器；
-	3. 生成器、迭代器；
+掌握Python的语法及部分高级用法，如：
+* 判断、循环、函数、类；
+* 继承、装饰器；
+* 生成器、迭代器；
 
 #### 3.2.PyQt
 
-	掌握PyQt框架并能够使用PyQt框架实现图形界面程序。
-	完成超过200行PyQt代码。
+* 掌握PyQt框架并能够使用PyQt框架实现图形界面程序。
+* 完成超过200行PyQt代码。
 
 #### 3.3.web.py
 
-	掌握web.py框架并能够使用web.py框架构建网站。
-	完成超过2k行web.py代码。
+* 掌握web.py框架并能够使用web.py框架构建网站。
+* 完成超过2k行web.py代码。
 
 #### 3.4.python-drape
 
-	drape是由我一个人设计并编码实现的。
-	drape是一个Python的web后台框架。
-	详情见：http://testdrape.sinaapp.com/
+* drape是由我一个人设计并编码实现的。
+* drape是一个Python的web后台框架。
+* 详情见：http://testdrape.sinaapp.com/
 
 ### 4.web前端开发
 
-	能够使用html，css，javascript设计网页前端。
-	能够使用div+css模式开发网页前端。
-	能够使用jQuery库、ajax技术。
+* 能够使用html，css，javascript设计网页前端。
+* 能够使用div+css模式开发网页前端。
+* 能够使用jQuery库、ajax技术。
 
 ### 5.php开发
 
-	2年工作经验。
+2年工作经验。
+* 2011年6月-2012年11月，大连科多网络科技有限公司。 http://daliankeduo.com/
+* 2012年12月 - 至今，大连奥瑞文网络技术有限公司。 http://www.orivon.com/
 
 ### 5.1.沙漏网
 
