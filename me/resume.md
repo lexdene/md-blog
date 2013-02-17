@@ -91,8 +91,8 @@ E-mail:
 
 #### 2.3.Linux与Web
 
-* 能够在 _Debian Linux_ 下配置_apache_，_python_，_php_，_mysql_运行及开发环境。
-* 能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用_mako_,_jinja2_等模板系统生成html代码。
+* 能够在 _Debian Linux_ 下配置 _apache_ ， _python_ ， _php_ ， _mysql_ 运行及开发环境。
+* 能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用 _mako_ , _jinja2_ 等模板系统生成html代码。
 
 ### 3.Python
 #### 3.1.Python程序设计
