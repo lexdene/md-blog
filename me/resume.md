@@ -54,25 +54,25 @@ E-mail:
 
 ### 1.4.C++相关
 
-#### 地瓜皮大工游戏平台
+#### 1.4.1.地瓜皮大工游戏平台
 * 使用技术：C++，Qt，网络通信，多线程
 * github 主页：https://github.com/lexdene/Dlut-Game-Platform
 * 代码行数：约10k
 
-#### Jate
+#### 1.4.2.Jate
 * 使用技术：C++，Qt，webkit
 * 介绍：
 利用webkit，使用html5,js等技术实现客户端程序。
 通过扩展webkit为js提供更加强大的功能。
 
-#### gcc五分钟系列
+#### 1.4.3.gcc五分钟系列
 * 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-11
 * github 主页：https://github.com/lexdene/gcc_five_minute
 * 内容简介：
  1. 通过大量简单的例子介绍 _gcc_ 的用法。
  2. 每节内容简短，控制在5分钟以内。
 
-#### C++是很危险的
+#### 1.4.4.C++是很危险的
 * 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-12
 * 内容简介：
  1. 通过简短的代码展示一些C++中不易发现的错误。
