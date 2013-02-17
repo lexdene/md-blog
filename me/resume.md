@@ -35,11 +35,11 @@ E-mail:
 
 ### 1.2.C++/Qt
 
-	熟练使用 _Qt Creator_ 设计 Qt 程序。
-	熟练使用Qt库设计图形界面、网络通信、数据库、多线程的应用程序。
-	熟练使用 _Qt webkit_ 库创建自定义浏览器。
-	使用Qt库写过 _小游戏_ , _地瓜皮_ 等项目。
-	累计代码约15k行。
+* 熟练使用_Qt Creator_设计 Qt 程序。
+* 熟练使用Qt库设计图形界面、网络通信、数据库、多线程的应用程序。
+* 熟练使用_Qt webkit_库创建自定义浏览器。
+* 使用Qt库写过_小游戏_,_地瓜皮_等项目。
+* 累计代码约15k行。
 
 ### 1.3.C++与算法实践
 * 掌握常用计算机算法，如：
@@ -81,18 +81,18 @@ E-mail:
 ### 2.Linux
 #### 2.1.shell命令行操作及脚本编程
 
-	能够使用_man_，_ssh_，_sed_，_awk_，_tmux_，_apt-get_等常用命令
-	能够使用 _bash_ 编写脚本程序。
+* 能够使用_man_，_ssh_，_sed_，_awk_，_tmux_，_apt-get_等常用命令
+* 能够使用 _bash_ 编写脚本程序。
 
 #### 2.2.Linux与C++
 
-	能够使用_GCC_，_make_，_GDB_，_emacs_，_git_等常用工具。
-	能够编写_Makefile_。
+* 能够使用_GCC_，_make_，_GDB_，_emacs_，_git_等常用工具。
+* 能够编写_Makefile_。
 
 #### 2.3.Linux与Web
 
-	能够在 _Debian Linux_ 下配置_apache_，_python_，_php_，_mysql_运行及开发环境。
-	能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用_mako_,_jinja2_等模板系统生成html代码。
+* 能够在 _Debian Linux_ 下配置_apache_，_python_，_php_，_mysql_运行及开发环境。
+* 能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用_mako_,_jinja2_等模板系统生成html代码。
 
 ### 3.Python
 #### 3.1.Python程序设计
