@@ -112,6 +112,12 @@ E-mail:
 	掌握web.py框架并能够使用web.py框架构建网站。
 	完成超过2k行web.py代码。
 
+#### 3.4.python-drape
+
+	drape是由我一个人设计并编码实现的。
+	drape是一个Python的web后台框架。
+	详情见：http://testdrape.sinaapp.com/
+
 ### 4.web前端开发
 
 	能够使用html，css，javascript设计网页前端。
@@ -121,6 +127,18 @@ E-mail:
 #### 5.php开发
 
 	2年工作经验。
+
+#### 5.1.沙漏网
+
+	沙漏网是我和秦楠两个人在业余时间写的。
+	目前由大连理工大学的一个由大三、大四学生组成的10人的团队运营。
+	详情见：http://www.sandlow.com/
+
+#### 5.2.思想记
+
+	思想记是我和Morgan两个人在业余时间写的。
+	目前由大连理工大学的一个由大一、大二学生组成的10人的团队运营。
+	详情见：http://www.verythought.com/
 
 # 教育经历
 
