@@ -142,6 +142,12 @@ E-mail:
 * 目前由大连理工大学的一个由大一、大二学生组成的10人的团队运营。
 * 详情见： http://www.verythought.com/
 
+# 开发环境
+* C/C++ : ubuntu + gedit + bash + gcc + gdb
+* Python/PHP : ubuntu + gedit
+* html/css/javascript : ubuntu + gedit + chrome
+* shell/bash : ubuntu + gedit
+
 # 教育经历
 
 * 2007年09月，考入大连理工大学土木工程专业。
