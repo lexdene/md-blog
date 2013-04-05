@@ -11,3 +11,4 @@
 	git config alias.co "checkout"
 	
 	git config core.editor "emacs"
+	git config mergetool.keepBackup false
