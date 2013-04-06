@@ -1,3 +1,5 @@
+# 在emacs中插入当前时间
+
 	; insert-datetime
 	(defun insert-datetime ()
 	  "Insert date at point."
