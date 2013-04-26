@@ -5,3 +5,10 @@
   "Insert date at point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
+
+; linum mode
+(global-linum-mode 1)
+
+; auto complete
+(require 'auto-complete-config)
+(ac-config-default)
