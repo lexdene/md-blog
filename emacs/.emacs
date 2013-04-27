@@ -12,3 +12,6 @@
 ; auto complete
 (require 'auto-complete-config)
 (ac-config-default)
+
+; newline at end of file
+(setq require-final-newline t)
