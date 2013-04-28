@@ -5,6 +5,7 @@
   "Insert date at point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
+(global-set-key (kbd "<f9>") 'insert-datetime)
 
 ; linum mode
 (global-linum-mode 1)
@@ -15,3 +16,6 @@
 
 ; newline at end of file
 (setq require-final-newline t)
+
+; scroll
+(setq scroll-step 1)
