@@ -19,3 +19,12 @@
 
 ; scroll
 (setq scroll-step 1)
+
+; refresh file
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t t t)
+  (message "refresh-file ...")
+  )
+
+(global-set-key [f5] 'refresh-file)
