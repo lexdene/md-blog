@@ -26,5 +26,12 @@
   (revert-buffer t t t)
   (message "refresh-file ...")
   )
-
 (global-set-key [f5] 'refresh-file)
+
+; split window when start up
+(split-window-horizontally)
+
+;;启用时间显示
+(setq display-time-format " %Y-%m-%d %A %H:%M ")
+(setq display-time-interval 10)
+(display-time-mode 1)
