@@ -25,13 +25,26 @@
   (interactive)
   (revert-buffer t t t)
   (message "refresh-file ...")
-  )
+)
 (global-set-key [f5] 'refresh-file)
-
-; split window when start up
-(split-window-horizontally)
 
 ;;启用时间显示
 (setq display-time-format " %Y-%m-%d %A %H:%M ")
 (setq display-time-interval 10)
 (display-time-mode 1)
+
+; .emacs.d
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+
+; mark at point
+(require 'mark-at-point)
+
+(setq default-tab-width 4)
+
+; white space
+(global-whitespace-mode 1)
+
+;;set color theme
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-comidia)
