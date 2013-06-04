@@ -6,7 +6,7 @@
 
 比如，当前是第5页，每页显示10条内容，SQL语句就可能是这样的:
 
-    select * from topic limit 5*10, 10;
+    select * from topic limit 50, 10;
 
 这条语句没什么问题，不是本文想讲的东西。
 
@@ -30,7 +30,7 @@
 比如，用户想搜索标题包含 _elephant_ 的文章，
 那么查询当前页的内容的SQL语句就变成了这样：
 
-    select * from topic where topic.title LIKE '%elephant%' limit 5*10, 10;
+    select * from topic where topic.title LIKE '%elephant%' limit 50, 10;
 
 查询一共有几页的时候，当然也得包括这个查询条件。
 
@@ -49,11 +49,14 @@
 ## FOUND_ROWS函数
 看如下两条SQL语句：
 
-    select SQL_CALC_FOUND_ROWS * from topic where topic.title LIKE '%elephant%' limit 5*10, 10;
+    select SQL_CALC_FOUND_ROWS * from topic where topic.title LIKE '%elephant%' limit 50, 10;
     select FOUND_ROWS();
 
 第一条语句，在select后面加上了 _SQL\_CALC\_FOUND\_ROWS_ 选项。
 注意： _SQL\_CALC\_FOUND\_ROWS_ 与 \* 之间没有逗号。
+
+ _SQL\_CALC\_FOUND\_ROWS_ 选项对第一条语句的结果没有任何影响，
+它仍然正常返回我们需要的内容。
 
 第二条语句，直接调用FOUND_ROWS函数。
 
