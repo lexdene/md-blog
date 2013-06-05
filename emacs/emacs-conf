@@ -42,9 +42,14 @@
 (setq default-tab-width 4)
 
 ; white space
-(global-whitespace-mode 1)
+;(global-whitespace-mode 1)
+(global-set-key (kbd "<f8>") 'whitespace-mode)
 
 ;;set color theme
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-comidia)
+;(color-theme-oswald)
+;(color-theme-comidia)
+;(color-theme-deep-blue)
+;(color-theme-classic)
+(color-theme-charcoal-black)
