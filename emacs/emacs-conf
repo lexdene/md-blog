@@ -14,6 +14,17 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+; coffee-mode
+(add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(require 'coffee-mode)
+(defun coffee-custom ()
+  "coffee-mode-hook"
+
+  ;; tab-width
+  (setq coffee-tab-width 2)
+  (setq tab-width 2))
+(add-hook 'coffee-mode-hook 'coffee-custom)
+
 ; newline at end of file
 (setq require-final-newline t)
 
@@ -36,9 +47,6 @@
 ; .emacs.d
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
-; mark at point
-(require 'mark-at-point)
-
 (setq default-tab-width 4)
 
 ; white space
@@ -52,4 +60,29 @@
 ;(color-theme-comidia)
 ;(color-theme-deep-blue)
 ;(color-theme-classic)
+
+; 这个颜色好评
 (color-theme-charcoal-black)
+
+; 红黑白黄
+;(color-theme-arjen)
+
+
+; js indent
+;(setq js-indent-level 2)
+
+; vline
+; download from http://www.emacswiki.org/emacs/download/vline.el
+(require 'vline)
+(global-set-key (kbd "<f7>") 'vline-mode)
+
+; windmove
+(global-set-key (kbd "<M-down>") 'windmove-down)
+(global-set-key (kbd "<M-up>") 'windmove-up)
+(global-set-key (kbd "C-c <down>") 'windmove-down)
+(global-set-key (kbd "C-c <up>") 'windmove-up)
+(global-set-key (kbd "C-c <left>") 'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+
+; menu bar mode
+(menu-bar-mode -1)
