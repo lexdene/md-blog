@@ -1,14 +1,12 @@
 # 刘项
-（这并不是我的真名，但是是我最常用的名字）
 
 # 基本信息
 * 男
 * 未婚
 * 生于1989年2月
-* 现居住于辽宁大连
+* 现居住于北京市
 * 博客：http://elephantliu.blog.51cto.com
 * github 主页：https://github.com/lexdene/
-
 
 # 联系方式
 
@@ -20,12 +18,19 @@ E-mail:
 
 # 专业技能
 
-	我最喜欢的程序设计语言是C++。
-	排名第2至第5的分别是Python,Lua,Javascript,bash。
-	我最喜欢的操作系统是Linux。
-	排名第2至第5的分别是Linux,Linux,Linux,Linux。
-	我最喜欢的桌面发行版是Ubuntu Linux。
-	我最喜欢的服务器发行版是Debian Linux。
+## 编程语言
+
+* 我喜欢的编程语言有5个
+ * 排名第一的是C++
+ * 第2至第5的分别是Python, Lua, CoffeeScript, bash
+* 我讨厌的编程语言有3个
+ * 排名第一的是Java
+ * 第2至第3的分别是PHP, matlab
+
+## 操作系统
+
+* 最喜欢的桌面操作系统是Ubuntu Linux
+* 最喜欢的服务器操作系统是Debian Linux
 
 ## 1.C++
 ### 1.1.C++程序设计
@@ -79,53 +84,58 @@ E-mail:
  1. 通过简短的代码展示一些C++中不易发现的错误。
  2. 希望提高 C++程序员对 C++的了解，减少错误。
 
-### 2.Linux
-#### 2.1.shell命令行操作及脚本编程
+## 2.Linux
+### 2.1.shell命令行操作及脚本编程
 
-* 能够使用 _man_ ， _ssh_ ， _sed_ ， _awk_ ， _tmux_ ， _apt-get_ 等常用命令
+* 能够使用 _grep_ , _crontab_ , _man_ , _ssh_ , _sed_ , _awk_ , _tmux_ , _apt-get_ 等常用命令
 * 能够使用 _bash_ 编写脚本程序。
 
-#### 2.2.Linux与C++
+### 2.2.Linux与C++
 
 * 能够使用 _GCC_ ， _make_ ， _GDB_ ， _emacs_ ， _git_ 等常用工具。
 * 能够编写 _Makefile_ 。
 
-#### 2.3.Linux与Web
+### 2.3.Linux与Web
 
 * 能够在 _Debian Linux_ 下配置 _apache_ ， _python_ ， _php_ ， _mysql_ 运行及开发环境。
 * 能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用 _mako_ , _jinja2_ 等模板系统生成html代码。
 
-### 3.Python
-#### 3.1.Python程序设计
+## 3.Python
+### 3.1.Python程序设计
 
 掌握Python的语法及部分高级用法，如：
 * 判断、循环、函数、类；
 * 继承、装饰器；
 * 生成器、迭代器；
 
-#### 3.2.PyQt
+### 3.2.PyQt
 
 * 掌握PyQt框架并能够使用PyQt框架实现图形界面程序。
 * 完成超过200行PyQt代码。
 
-#### 3.3.web.py
+### 3.3.web编程
 
-* 掌握web.py框架并能够使用web.py框架构建网站。
-* 完成超过2k行web.py代码。
+* 掌握 _django_ , _web.py_ , _tornado_ 等web框架
+* 掌握 _mako_ , _jinja2_ 等模板引擎
+* 了解REST风格API
 
-#### 3.4.python-drape
+### 3.4.python-drape
 
 * drape是由我一个人设计并编码实现的。
 * drape是一个Python的web后台框架。
 * 详情见：http://testdrape.sinaapp.com/
 
-### 4.web前端开发
+### 3.5.工作经验
+
+* 2013年3月至今，北京精硕科技有限公司，django / tornado / mongodb / 前端相关开发
+
+## 4.web前端开发
 
 * 能够使用html，css，javascript设计网页前端。
 * 能够使用div+css模式开发网页前端。
 * 能够使用jQuery库、ajax技术。
 
-### 5.php开发
+## 5.php开发
 
 2年工作经验。
 * 2011年6月-2012年11月，大连科多网络科技有限公司。 http://daliankeduo.com/
