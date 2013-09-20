@@ -1,4 +1,5 @@
 (setq-default make-backup-files nil)
+(setq-default indent-tabs-mode nil)
 
 ; insert-datetime
 (defun insert-datetime ()
@@ -11,10 +12,14 @@
 (global-linum-mode 1)
 
 ; auto complete
+; apt-get install emacs-goodies-el
+; apt-get install auto-complete-el
 (require 'auto-complete-config)
 (ac-config-default)
 
 ; coffee-mode
+; cd ~/.emacs.d
+; git clone https://github.com/lexdene/coffee-mode.git
 (add-to-list 'load-path "~/.emacs.d/coffee-mode")
 (require 'coffee-mode)
 (defun coffee-custom ()
@@ -52,21 +57,6 @@
 ; white space
 ;(global-whitespace-mode 1)
 (global-set-key (kbd "<f8>") 'whitespace-mode)
-
-;;set color theme
-(require 'color-theme)
-(color-theme-initialize)
-;(color-theme-oswald)
-;(color-theme-comidia)
-;(color-theme-deep-blue)
-;(color-theme-classic)
-
-; 这个颜色好评
-(color-theme-charcoal-black)
-
-; 红黑白黄
-;(color-theme-arjen)
-
 
 ; js indent
 ;(setq js-indent-level 2)
