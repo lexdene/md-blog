@@ -15,6 +15,9 @@
 ; apt-get install emacs-goodies-el
 ; apt-get install auto-complete-el
 (require 'auto-complete-config)
+; case sensitive matching
+(setq ac-ignore-case nil)
+(global-auto-complete-mode t)
 (ac-config-default)
 
 ; coffee-mode
@@ -59,7 +62,8 @@
 (global-set-key (kbd "<f8>") 'whitespace-mode)
 
 ; js indent
-;(setq js-indent-level 2)
+(setq js-indent-level 2)
+(setq js-auto-indent-flag nil)
 
 ; vline
 ; download from http://www.emacswiki.org/emacs/download/vline.el
@@ -76,3 +80,12 @@
 
 ; menu bar mode
 (menu-bar-mode -1)
+
+; tab-stop-list
+(setq tab-stop-list (number-sequence 2 200 2))
+
+; compile make
+(add-to-list 'load-path "~/.emacs.d/compile-make")
+(require 'compile-make)
+(global-set-key (kbd "<f9>") 'compile-make)
+(setq compilation-scroll-output t)
