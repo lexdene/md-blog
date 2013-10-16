@@ -6,7 +6,7 @@
   "Insert date at point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
-(global-set-key (kbd "<f9>") 'insert-datetime)
+(global-set-key (kbd "<f6>") 'insert-datetime)
 
 ; linum mode
 (global-linum-mode 1)
