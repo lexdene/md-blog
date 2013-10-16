@@ -1,12 +1,21 @@
 (setq-default make-backup-files nil)
 (setq-default indent-tabs-mode nil)
+; newline at end of file
+(setq require-final-newline t)
+; scroll
+(setq scroll-step 1)
+; tab
+(setq default-tab-width 4)
+(setq tab-stop-list (number-sequence 2 200 2))
+; menu bar mode
+(menu-bar-mode -1)
 
 ; insert-datetime
 (defun insert-datetime ()
   "Insert date at point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
-(global-set-key (kbd "<f6>") 'insert-datetime)
+(global-set-key [f6] 'insert-datetime)
 
 ; linum mode
 (global-linum-mode 1)
@@ -33,12 +42,6 @@
   (setq tab-width 2))
 (add-hook 'coffee-mode-hook 'coffee-custom)
 
-; newline at end of file
-(setq require-final-newline t)
-
-; scroll
-(setq scroll-step 1)
-
 ; refresh file
 (defun refresh-file ()
   (interactive)
@@ -55,11 +58,9 @@
 ; .emacs.d
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
-(setq default-tab-width 4)
-
 ; white space
 ;(global-whitespace-mode 1)
-(global-set-key (kbd "<f8>") 'whitespace-mode)
+(global-set-key [f8] 'whitespace-mode)
 
 ; js indent
 (setq js-indent-level 2)
@@ -68,24 +69,18 @@
 ; vline
 ; download from http://www.emacswiki.org/emacs/download/vline.el
 (require 'vline)
-(global-set-key (kbd "<f7>") 'vline-mode)
+(global-set-key [f7] 'vline-mode)
 
 ; windmove
-(global-set-key (kbd "<M-down>") 'windmove-down)
-(global-set-key (kbd "<M-up>") 'windmove-up)
+(global-set-key [M-down] 'windmove-down)
+(global-set-key [M-up] 'windmove-up)
 (global-set-key (kbd "C-c <down>") 'windmove-down)
 (global-set-key (kbd "C-c <up>") 'windmove-up)
 (global-set-key (kbd "C-c <left>") 'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 
-; menu bar mode
-(menu-bar-mode -1)
-
-; tab-stop-list
-(setq tab-stop-list (number-sequence 2 200 2))
-
 ; compile make
 (add-to-list 'load-path "~/.emacs.d/compile-make")
 (require 'compile-make)
-(global-set-key (kbd "<f9>") 'compile-make)
+(global-set-key [f9] 'compile-make)
 (setq compilation-scroll-output t)
