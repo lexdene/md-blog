@@ -3,7 +3,8 @@
 # 基本信息
 * 男
 * 未婚
-* 生于1989年2月
+* 生于1989年6月
+* 辽宁人
 * 现居住于北京市
 * 博客：http://elephantliu.blog.51cto.com
 * github 主页：https://github.com/lexdene/
