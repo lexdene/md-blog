@@ -26,12 +26,12 @@ E-mail:
  * 第2至第5的分别是Python, Lua, CoffeeScript, bash
 * 我讨厌的编程语言有3个
  * 排名第一的是Java
- * 第2至第3的分别是PHP, matlab
+ * 第2至第3的分别是PHP, C
 
 ## 操作系统
 
-* 最喜欢的桌面操作系统是Ubuntu Linux
-* 最喜欢的服务器操作系统是Debian Linux
+* 最喜欢的桌面操作系统是Ubuntu
+* 最喜欢的服务器操作系统是Debian
 
 ## 1.C++
 ### 1.1.C++程序设计
@@ -99,7 +99,7 @@ E-mail:
 ### 2.3.Linux与Web
 
 * 能够在 _Debian Linux_ 下配置 _apache_ ， _python_ ， _php_ ， _mysql_ 运行及开发环境。
-* 能够使用 _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用 _mako_ , _jinja2_ 等模板系统生成html代码。
+* 能够使用 _C++_ , _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用 _mako_ , _jinja2_ 等模板系统生成html代码。
 
 ## 3.Python
 ### 3.1.Python程序设计
@@ -128,7 +128,7 @@ E-mail:
 
 ### 3.5.工作经验
 
-* 2013年3月至今，北京精硕科技有限公司，django / tornado / mongodb / 前端相关开发
+* 2013年3月至今，北京精硕科技有限公司，django / tornado / mongodb / js / jQuery / bootstrap相关开发
 
 ## 4.web前端开发
 
