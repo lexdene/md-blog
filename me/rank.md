@@ -25,8 +25,9 @@
 9. Constant
 10. Compilation error
 
-# 我讨厌的语法/语言特性有3个
+# 我讨厌的语法/语言特性有4个
 
-1. Equal comparison between different types
-2. Garbage collection
-3. Interface
+1. Warning
+2. Equal comparison between different types
+3. Garbage collection
+4. Interface
