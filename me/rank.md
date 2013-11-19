@@ -1,4 +1,5 @@
-# 我喜欢的编程语言有5个
+# 各种排名
+## 我喜欢的编程语言
 
 1. C++
 2. Python
@@ -6,13 +7,13 @@
 4. CoffeeScript
 5. bash
 
-# 我讨厌的编程语言有3个
+## 我讨厌的编程语言
 
 1. Java
 2. PHP
 3. C
 
-# 我喜欢的语法/语言特性有10个
+## 我喜欢的语法/语言特性
 
 1. Object Oriented
 2. Generic Programming(template)
@@ -25,9 +26,10 @@
 9. Constant
 10. Compilation error
 
-# 我讨厌的语法/语言特性有4个
+## 我讨厌的语法/语言特性
 
 1. Warning
-2. Equal comparison between different types
-3. Garbage collection
-4. Interface
+2. AOP
+3. Equal comparison between different types
+4. Garbage collection
+5. Interface
