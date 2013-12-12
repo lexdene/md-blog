@@ -6,7 +6,8 @@
 (setq scroll-step 1)
 ; tab
 (setq default-tab-width 4)
-(setq tab-stop-list (number-sequence 2 200 2))
+(setq tab-stop-list (number-sequence 4 200 4))
+(setq c-basic-offset 4)
 ; menu bar mode
 (menu-bar-mode -1)
 
@@ -63,7 +64,7 @@
 (global-set-key [f8] 'whitespace-mode)
 
 ; js indent
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 (setq js-auto-indent-flag nil)
 
 ; vline
