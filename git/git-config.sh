@@ -12,6 +12,8 @@ git config --global alias.co "checkout"
 git config --global alias.ps "push"
 git config --global alias.pl "pull"
 git config --global alias.ap "add -p"
+git config --global alias.dtr "diff-tree --no-commit-id --name-only -r"
+git config --global alias.dst "diff --name-status"
 
 git config --global core.editor "emacs"
 
