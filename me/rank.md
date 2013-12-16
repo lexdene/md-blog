@@ -6,6 +6,7 @@
 3. Lua
 4. CoffeeScript
 5. bash
+6. haml
 
 ## 我讨厌的编程语言
 
