@@ -1,4 +1,4 @@
-# 用found_rows处理分页
+# MySQL中用found_rows高效处理分页
 
 ## 查询当前页的内容
 

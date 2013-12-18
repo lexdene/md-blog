@@ -18,3 +18,5 @@ git config --global alias.dst "diff --name-status"
 git config --global core.editor "emacs"
 
 git config --global push.default current
+
+git config --global mergetool.keepBackup false
