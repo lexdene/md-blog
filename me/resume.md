@@ -6,7 +6,8 @@
 * 生于1989年6月
 * 辽宁人
 * 现居住于北京市
-* 博客：http://elephantliu.blog.51cto.com
+* 现工作在北京精硕(AdMaster)科技有限公司
+* 博客：https://github.com/lexdene/md-blog/
 * github 主页：https://github.com/lexdene/
 
 # 联系方式
@@ -19,146 +20,134 @@ E-mail:
 
 # 专业技能
 
-## 编程语言
+## 0. ACM/ICPC
 
-* 我喜欢的编程语言有5个
- * 排名第一的是C++
- * 第2至第5的分别是Python, Lua, CoffeeScript, bash
-* 我讨厌的编程语言有3个
- * 排名第一的是Java
- * 第2至第3的分别是PHP, C
+* 东北地区二等奖
+* 两次参加regional均未获奖
 
-## 操作系统
+## 1. C++
 
-* 最喜欢的桌面操作系统是Ubuntu
-* 最喜欢的服务器操作系统是Debian
+* 熟悉C++语法，熟悉STL。
+* 熟悉Qt，使用Qt完成多个项目
+* 写过很多关于C++的文章
 
-## 1.C++
-### 1.1.C++程序设计
-* 熟练掌握 C++并理解面向对象程序设计思想。
-* 熟练掌握 C++中面向对象的相关技术，如：封装、继承、多态。
-* 能够使用一些 C++特有的编程技术，如：模板、指针 等。
-* 熟练掌握 C++中相关的设计模式，如：抽象工厂、组合模式、迭代器、备忘录等。
+### 1.0. DGP游戏平台
 
-### 1.2.C++/Qt
-
-* 熟练使用 _Qt Creator_ 设计 Qt 程序。
-* 熟练使用Qt库设计图形界面、网络通信、数据库、多线程的应用程序。
-* 熟练使用 _Qt webkit_ 库创建自定义浏览器。
-* 使用Qt库写过 _小游戏_ , _地瓜皮_ 等项目。
-* 累计代码约15k行。
-
-### 1.3.C++与算法实践
-* 掌握常用计算机算法，如：
- 1. 递归，搜索
- 2. 动态规则，背包问题
- 3. 图论：包括最小生成树，最短路，网络流，最小费用流等
- 4. 计算几何：凸包
-* 掌握相关数据结构，如：
- 1. 链表，向量，哈希表， 栈
- 2. 平衡树、堆、二叉搜索树、并查集
- 3. 二分图，有向图
-
-### 1.4.C++相关
-
-#### 1.4.1.地瓜皮大工游戏平台
 * 使用技术：C++，Qt，网络通信，多线程
 * github 主页：https://github.com/lexdene/Dlut-Game-Platform
 * 代码行数：约10k
 
-#### 1.4.2.Jate
+### 1.1. Jate
+
 * 使用技术：C++，Qt，webkit
 * 介绍：
-利用webkit，使用html5,js等技术实现客户端程序。
+利用webkit，使用html5, js等技术实现客户端程序。
 通过扩展webkit为js提供更加强大的功能。
 
-#### 1.4.3.gcc五分钟系列
+### 1.2. gcc五分钟系列
 * 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-11
 * github 主页：https://github.com/lexdene/gcc_five_minute
 * 内容简介：
  1. 通过大量简单的例子介绍 _gcc_ 的用法。
  2. 每节内容简短，控制在5分钟以内。
 
-#### 1.4.4.C++是很危险的
+### 1.3. C++是很危险的
 * 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-12
 * 内容简介：
  1. 通过简短的代码展示一些C++中不易发现的错误。
  2. 希望提高 C++程序员对 C++的了解，减少错误。
 
-## 2.Linux
-### 2.1.shell命令行操作及脚本编程
+### 1.4. C++与元编程
+
+* 地址：https://github.com/lexdene/md-blog/blob/master/cpp/
+* 现更新至第3节
+* C++在元编程方面的能力，比一些动态语言差的很远。但并不是完全没有。此系列文章介绍一些C++的高级用法。
+
+## 2. Linux
+
+### 2.0. 发行版
+
+* 桌面: Ubuntu
+* 服务器: Debian
+
+### 2.1. shell命令行操作及脚本编程
 
 * 能够使用 _grep_ , _crontab_ , _man_ , _ssh_ , _sed_ , _awk_ , _tmux_ , _apt-get_ 等常用命令
 * 能够使用 _bash_ 编写脚本程序。
 
-### 2.2.Linux与C++
+### 2.2. Linux与C++
 
 * 能够使用 _GCC_ ， _make_ ， _GDB_ ， _emacs_ ， _git_ 等常用工具。
 * 能够编写 _Makefile_ 。
 
-### 2.3.Linux与Web
+### 2.3. Linux与Web
 
 * 能够在 _Debian Linux_ 下配置 _apache_ ， _python_ ， _php_ ， _mysql_ 运行及开发环境。
-* 能够使用 _C++_ , _python_ , _php_ 完成常用后台处理，如：处理GET和POST请求，使用 _mako_ , _jinja2_ 等模板系统生成html代码。
+* 熟悉apache的 _cgi_ , _fastcgi_ , _wsgi_ 接口。
+* 了解apache的 _rewrite_ , _proxy_ , _alias_ 模块。
+* 能够使用Debian Linux + apache + cgi + C++ 开发web后端。
+* 能够使用Debian Linux + apache + fastcgi + C++ 开发web后端。
+* 能够使用Debian Linux + apache + wsgi + Python 开发web后端。
 
-## 3.Python
-### 3.1.Python程序设计
+## 3. Python
 
-掌握Python的语法及部分高级用法，如：
-* 判断、循环、函数、类；
-* 继承、装饰器；
-* 生成器、迭代器；
+* 基本语法、生成器、迭代器、协程
+* pep8, pylint
+* PyQt, django, web.py, tornado, mako, jinja2
+* python-drape
 
-### 3.2.PyQt
-
-* 掌握PyQt框架并能够使用PyQt框架实现图形界面程序。
-* 完成超过200行PyQt代码。
-
-### 3.3.web编程
-
-* 掌握 _django_ , _web.py_ , _tornado_ 等web框架
-* 掌握 _mako_ , _jinja2_ 等模板引擎
-* 了解REST风格API
-
-### 3.4.python-drape
+### 3.0. python-drape
 
 * drape是由我一个人设计并编码实现的。
 * drape是一个Python的web后台框架。
 * 详情见：http://testdrape.sinaapp.com/
 
-### 3.5.工作经验
-
-* 2013年3月至今，北京精硕科技有限公司，django / tornado / mongodb / js / jQuery / bootstrap相关开发
-
-## 4.web前端开发
+## 4. web前端开发
 
 * 能够使用html，css，javascript设计网页前端。
 * 能够使用div+css模式开发网页前端。
-* 能够使用jQuery库、ajax技术。
+* 能够使用jQuery库、bootstrap库、ajax技术。
+* 能够使用CoffeeScript，haml，scss等语言。
+* 了解backbone，angular。
 
-## 5.php开发
+## 5. 设计模式
 
-2年工作经验。
-* 2011年6月-2012年11月，大连科多网络科技有限公司。 http://daliankeduo.com/
-* 2012年12月 - 至今，大连奥瑞文网络技术有限公司。 http://www.orivon.com/
+* 读过《设计模式 可复用面向对象软件的基础》
+* 了解常用的设计模式，如： 单例，享元，工厂方法，抽象工厂等。
 
-### 5.1.沙漏网
+## 6. 编程语言
 
-* 沙漏网是我和秦楠两个人在业余时间写的。
-* 目前由大连理工大学的一个由大三、大四学生组成的10人的团队运营。
-* 详情见： http://www.sandlow.com/
+* 我喜欢的编程语言有（按排名顺序）：C++, Python, Lua, CoffeeScript, bash, haml
+* 我讨厌的编程语言有（按排名顺序）：Java, PHP, C
 
-### 5.2.思想记
+## 7. 领导/教学
 
-* 思想记是我和Morgan两个人在业余时间写的。
-* 目前由大连理工大学的一个由大一、大二学生组成的10人的团队运营。
-* 详情见： http://www.verythought.com/
+* 曾担任大连理工大学ACM/ICPC竞赛集训队领队
+* 曾在校级选修课《ACM算法实践》当过3学期的讲课人
+* 曾在公司内负责git培训与考核
+
+# 工作经验
+
+## 1. 大连科多
+
+2011年6月至2013年1月
+
+* C++ / Qt / webkit 相关开发
+* php / js / jQuery / Jecat 相关开发
+
+## 2. 北京精硕(AdMaster)科技有限公司
+
+2013年3月至今
+
+* django / tornado / mongodb 相关开发
+* js / jQuery / bootstrap 相关开发
 
 # 开发环境
-* C/C++ : ubuntu + gedit + bash + gcc + gdb
-* Python/PHP : ubuntu + gedit
-* html/css/javascript : ubuntu + gedit + chrome
-* shell/bash : ubuntu + gedit
+
+* ubuntu
+* gedit / emacs
+* bash
+* gcc / gdb / chrome
 
 # 教育经历
 
@@ -169,6 +158,8 @@ E-mail:
 
 * 2010年6月5日至今，担任大连理工大学BBS碧海青天站 _算法设计与程序竞赛版_ 版主。
 * 2010年6月14日至今，担任大连理工大学BBS碧海青天站 _Linux & Unix_ 版副版主。
+* 思想记的作者之一（http://www.verythought.com/）
+* 乐碰的作者之一（尚在开发中）
 
 # 常用的网络id
 * lexdene
