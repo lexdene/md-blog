@@ -109,6 +109,7 @@ E-mail:
 * 能够使用jQuery库、bootstrap库、ajax技术。
 * 能够使用CoffeeScript，haml，scss等语言。
 * 了解backbone，angular。
+* 了解jQuery Mobile，html5及移动端开发。
 
 ## 5. 设计模式
 
