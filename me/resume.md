@@ -1,12 +1,12 @@
 # 简历 - 刘项
 
 # 基本信息
+
 * 男
 * 未婚
 * 生于1989年6月
 * 辽宁人
 * 现居住于北京市
-* 现工作在北京精硕(AdMaster)科技有限公司
 * 博客：https://github.com/lexdene/md-blog/
 * github 主页：https://github.com/lexdene/
 
@@ -22,7 +22,7 @@ E-mail:
 
 ## 0. ACM/ICPC
 
-* 东北地区二等奖
+* 东北地区二等奖(2次)
 * 两次参加regional均未获奖
 
 ## 1. C++
@@ -39,7 +39,7 @@ E-mail:
 
 ### 1.1. Jate
 
-* 使用技术：C++，Qt，webkit
+* 使用技术：`C++`, `Qt`, `webkit`
 * 介绍：
 利用webkit，使用html5, js等技术实现客户端程序。
 通过扩展webkit为js提供更加强大的功能。
@@ -48,7 +48,7 @@ E-mail:
 * 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-11
 * github 主页：https://github.com/lexdene/gcc_five_minute
 * 内容简介：
- 1. 通过大量简单的例子介绍 _gcc_ 的用法。
+ 1. 通过大量简单的例子介绍 `gcc` 的用法。
  2. 每节内容简短，控制在5分钟以内。
 
 ### 1.3. C++是很危险的
@@ -72,29 +72,28 @@ E-mail:
 
 ### 2.1. shell命令行操作及脚本编程
 
-* 能够使用 _grep_ , _crontab_ , _man_ , _ssh_ , _sed_ , _awk_ , _tmux_ , _apt-get_ 等常用命令
-* 能够使用 _bash_ 编写脚本程序。
+* 能够使用`grep`, `crontab`, `man`, `ssh`, `sed`, `awk`, `tmux`, `apt-get`等常用命令
+* 能够使用`bash`编写脚本程序
 
 ### 2.2. Linux与C++
 
-* 能够使用 _GCC_ ， _make_ ， _GDB_ ， _emacs_ ， _git_ 等常用工具。
-* 能够编写 _Makefile_ 。
+* 能够使用`GCC`, `make`, `GDB`等常用工具
+* 能够编写`Makefile`
 
 ### 2.3. Linux与Web
 
-* 能够在 _Debian Linux_ 下配置 _apache_ ， _python_ ， _php_ ， _mysql_ 运行及开发环境。
-* 熟悉apache的 _cgi_ , _fastcgi_ , _wsgi_ 接口。
-* 了解apache的 _rewrite_ , _proxy_ , _alias_ 模块。
-* 能够使用Debian Linux + apache + cgi + C++ 开发web后端。
-* 能够使用Debian Linux + apache + fastcgi + C++ 开发web后端。
-* 能够使用Debian Linux + apache + wsgi + Python 开发web后端。
+* 能够在`Debian Linux`下配置`apache`, `python`, `php`, `mysql`运行及开发环境。
+* 熟悉apache的`cgi`, `fastcgi`, `wsgi`接口。
+* 了解apache的`rewrite`, `proxy`, `alias`等模块。
+* 能够使用`Debian Linux` + `apache` + `cgi` + `C++` 开发web后端。
+* 能够使用`Debian Linux` + `apache` + `fastcgi` + `C++` 开发web后端。
+* 能够使用`Debian Linux` + `apache` + `wsgi` + `Python` 开发web后端。
 
 ## 3. Python
 
 * 基本语法、生成器、迭代器、协程
-* pep8, pylint
-* PyQt, django, web.py, tornado, mako, jinja2
-* python-drape
+* `pep8`, `pylint`
+* `PyQt`, `django`, `celery`, `web.py`, `tornado`, `mako`, `jinja2`
 
 ### 3.0. python-drape
 
@@ -104,51 +103,58 @@ E-mail:
 
 ## 4. web前端开发
 
-* 能够使用html，css，javascript设计网页前端。
-* 能够使用div+css模式开发网页前端。
-* 能够使用jQuery库、bootstrap库、ajax技术。
-* 能够使用CoffeeScript，haml，scss等语言。
-* 了解backbone，angular。
-* 了解jQuery Mobile，html5及移动端开发。
+* 能够使用`html`, `css`, `javascript`完成web前端开发
+* 能够使用`div + css`模式开发网页前端
+* 能够使用`ajax`等技术
+* 能够使用`jQuery`, `bootstrap`等前端库
+* 能够使用`CoffeeScript`, `haml`, `scss`等语言
+* 了解`backbone`, `angular`
+* 了解`jQuery Mobile`, `html5`及移动端开发。
 
 ## 5. 设计模式
 
 * 读过《设计模式 可复用面向对象软件的基础》
-* 了解常用的设计模式，如： 单例，享元，工厂方法，抽象工厂等。
+* 了解常用的设计模式，如：单例，享元，工厂方法，抽象工厂等并在项目中实际应用
 
 ## 6. 编程语言
 
-* 我喜欢的编程语言有（按排名顺序）：C++, Python, Lua, CoffeeScript, bash, haml
-* 我讨厌的编程语言有（按排名顺序）：Java, PHP, C
+* 我喜欢的编程语言有（按排名顺序）：`C++`, `Python`, `Lua`, `CoffeeScript`, `bash`, `haml`
+* 我讨厌的编程语言有（按排名顺序）：`Java`, `PHP`, `C`
 
-## 7. 领导/教学
+## 7. 版本控制
 
-* 曾担任大连理工大学ACM/ICPC竞赛集训队领队
-* 曾在校级选修课《ACM算法实践》当过3学期的讲课人
+* `git`, `git-flow`
+* git重度用户
+* 曾在公司内负责git培训与考核
+
+## 8. 开发环境
+
+* ubuntu
+* gedit, emacs
+* bash
+* gcc, gdb, chrome
+
+## 9. 领导/教学
+
+* 曾担任大连理工大学ACM/ICPC竞赛集训队领队及新人培训/赛前集训主讲人,带领大连理工大学ACM/ICPC竞赛集训队获得过regional比赛2银1铜的成绩
+* 曾在大连理工大学校级选修课《ACM算法实践》当过3学期的讲课人
 * 曾在公司内负责git培训与考核
 
 # 工作经验
 
-## 1. 大连科多
+## 1. 大连科多网络科技有限公司
 
 2011年6月至2013年1月
 
-* C++ / Qt / webkit 相关开发
-* php / js / jQuery / Jecat 相关开发
+* `C++`, `Qt`, `webkit`相关开发
+* `php`, `js`, `jQuery`, `Jecat`相关开发
 
-## 2. 北京精硕(AdMaster)科技有限公司
+## 2. AdMaster精硕世纪科技(北京)有限公司
 
-2013年3月至今
+2013年3月至2014年2月
 
-* django / tornado / mongodb 相关开发
-* js / jQuery / bootstrap 相关开发
-
-# 开发环境
-
-* ubuntu
-* gedit / emacs
-* bash
-* gcc / gdb / chrome
+* `django`, `tornado`, `celery`, `mongodb`相关开发
+* `js`, `jQuery`, `bootstrap`相关开发
 
 # 教育经历
 
@@ -163,6 +169,11 @@ E-mail:
 * 乐碰的作者之一（尚在开发中）
 
 # 常用的网络id
+
 * lexdene
 * elephant_liu
 * 刘项
+
+# 注
+
+1. 刘项是我最常用的名字，但是由于某些奇怪的原因，我身份证上的名字并不是刘项
