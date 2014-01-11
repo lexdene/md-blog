@@ -52,10 +52,10 @@
     select SQL_CALC_FOUND_ROWS * from topic where topic.title LIKE '%elephant%' limit 50, 10;
     select FOUND_ROWS();
 
-第一条语句，在select后面加上了 _SQL\_CALC\_FOUND\_ROWS_ 选项。
-注意： _SQL\_CALC\_FOUND\_ROWS_ 与 \* 之间没有逗号。
+第一条语句，在select后面加上了 `SQL_CALC_FOUND_ROWS` 选项。
+注意： `SQL_CALC_FOUND_ROWS` 与 \* 之间没有逗号。
 
- _SQL\_CALC\_FOUND\_ROWS_ 选项对第一条语句的结果没有任何影响，
+`SQL_CALC_FOUND_ROWS` 选项对第一条语句的结果没有任何影响，
 它仍然正常返回我们需要的内容。
 
 第二条语句，直接调用FOUND_ROWS函数。
