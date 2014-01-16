@@ -18,6 +18,11 @@ E-mail:
 
 	echo ZWxlcGhhbnRfbGl1QG1haWwuZGx1dC5lZHUuY24K | base64 -d
 
+我想找一份使用Linux做开发的工作。
+
+如果您解不开我的E-mail地址，
+那么我对您的公司不感兴趣。
+
 # 专业技能
 
 ## 0. ACM/ICPC
