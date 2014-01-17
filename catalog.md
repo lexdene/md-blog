@@ -38,6 +38,10 @@
 
 [emacs/window.md](emacs/window.md)
 
+## 说一说我喜欢和讨厌的语法
+
+[me/rank-explain.md](me/rank-explain.md)
+
 ## 我心中各种排名
 
 [me/rank.md](me/rank.md)
