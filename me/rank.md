@@ -19,18 +19,16 @@
 1. Object Oriented
 2. Generic Programming(template)
 3. Function as first class
-4. Pointer
-5. Lambda expression(anonymous function)
-6. Delimit blocks by indentation
-7. List comprehension
-8. Typechecking arguments in functions
-9. Constant
-10. Compilation error
+4. Lambda expression(anonymous function)
+5. Delimit blocks by indentation
+6. List comprehension
+7. Typechecking arguments in functions
+8. Constant and enumeration
+9. Compilation error
 
 ## 我讨厌的语法/语言特性
 
 1. Warning
 2. AOP
-3. Equal comparison between different types
-4. Garbage collection
-5. Interface
+3. implicit type conversion
+4. Interface
