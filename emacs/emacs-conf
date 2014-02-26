@@ -19,6 +19,8 @@
 (global-set-key [f6] 'insert-datetime)
 
 ; linum mode
+(add-to-list 'load-path "~/.emacs.d")
+(require 'linum)
 (global-linum-mode 1)
 
 ; auto complete
@@ -85,3 +87,33 @@
 (require 'compile-make)
 (global-set-key [f9] 'compile-make)
 (setq compilation-scroll-output t)
+
+
+; grep at point
+(require 'thingatpt)
+(defun grep-at-point ()
+  "get current word and grep it"
+  (interactive)
+  (let
+      ((buffer (get-buffer-create "*grep at point*")))
+      (display-buffer buffer))
+  (let*
+      (
+       (directory (getenv "PWD"))
+       (word (thing-at-point 'symbol))
+       (buffer (get-buffer-create "*grep at point*"))
+       (command
+         (format
+           "cd %s && grep -nH -r '%s' ."
+           directory
+           word
+           )
+         )
+       )
+    (message "%s" directory)
+    (message "%s" command)
+    (shell-command command buffer)
+    (goto-char 1)
+    )
+  )
+(global-set-key [f3] 'grep-at-point)
