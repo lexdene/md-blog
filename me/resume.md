@@ -3,8 +3,7 @@
 # 基本信息
 
 * 男
-* 未婚
-* 生于1989年6月
+* 生于1989年
 * 辽宁人
 * 现居住于北京市
 * 博客：https://github.com/lexdene/md-blog/
@@ -17,11 +16,6 @@ E-mail:
 在Linux的终端中输入以下内容可以看到我的E-mail地址：
 
 	echo ZWxlcGhhbnRfbGl1QG1haWwuZGx1dC5lZHUuY24K | base64 -d
-
-我想找一份使用Linux做开发的工作。
-
-如果您解不开我的E-mail地址，
-那么我对您的公司不感兴趣。
 
 # 专业技能
 
@@ -151,15 +145,15 @@ E-mail:
 
 2011年6月至2013年1月
 
-* `C++`, `Qt`, `webkit`相关开发
-* `php`, `js`, `jQuery`, `Jecat`相关开发
+* `C++`, `Qt`, `webkit`
+* `php`, `MySQL`, `js`, `jQuery`, `Jecat`
 
 ## 2. AdMaster精硕世纪科技(北京)有限公司
 
 2013年3月至2014年2月
 
-* `django`, `tornado`, `celery`, `mongodb`相关开发
-* `js`, `jQuery`, `bootstrap`相关开发
+* `Python`, `django`, `tornado`, `celery`, `mongodb`
+* `js`, `jQuery`, `bootstrap`
 
 # 教育经历
 
@@ -182,3 +176,4 @@ E-mail:
 # 注
 
 1. 刘项是我最常用的名字，但是由于某些奇怪的原因，我身份证上的名字并不是刘项
+2. 我想找一份使用Linux做开发的工作。如果您解不开我的E-mail地址，那么我对您的公司不感兴趣。
