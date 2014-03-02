@@ -14,6 +14,10 @@
 
 [cpp/method-appoint/method_appoint.md](cpp/method-appoint/method_appoint.md)
 
+## C++是很危险的：第一章 构造函数：第一节
+
+[cpp_is_dangerous/1.1/1.1.md](cpp_is_dangerous/1.1/1.1.md)
+
 ## emacs中使用auto-complete
 
 [emacs/auto-complete.md](emacs/auto-complete.md)
