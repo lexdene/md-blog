@@ -113,7 +113,6 @@
     (message "%s" directory)
     (message "%s" command)
     (shell-command command buffer)
-    (goto-char 1)
     )
   )
 (global-set-key [f3] 'grep-at-point)
