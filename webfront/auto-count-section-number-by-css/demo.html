@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>auto count section number by css</title>
+    <style>
+      body {
+          counter-reset: chapter;
+      }
+
+      h1 {
+          counter-reset: section;
+      }
+      h1:before {
+          counter-increment: chapter;
+          content: counter(chapter) ". ";
+      }
+
+      h2 {
+          counter-reset: subsection;
+      }
+      h2:before {
+          counter-increment: section;
+          content: counter(chapter) "." counter(section) " ";
+      }
+
+      h3:before {
+          counter-increment: subsection;
+          content: counter(chapter) "." counter(section) "." counter(subsection) " ";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>aaa</h1>
+    <h2>bbb</h2>
+    <h3>ccc</h3>
+    <h3>ddd</h3>
+    <h1>eee</h1>
+    <h2>fff</h2>
+    <h3>ggg</h3>
+    <h3>hhh</h3>
+    <h3>iii</h3>
+    <h2>jjj</h2>
+    <h3>kkk</h3>
+    <h3>lll</h3>
+  </body>
+</html>
