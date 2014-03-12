@@ -61,4 +61,4 @@
         content: counter(chapter) "." counter(section) "." counter(subsection) " ";
     }
 
-[详情见demo](demo.html)
+完整代码可以参见[demo](demo.html)
