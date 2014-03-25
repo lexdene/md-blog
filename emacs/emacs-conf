@@ -90,29 +90,9 @@
 
 
 ; grep at point
-(require 'thingatpt)
-(defun grep-at-point ()
-  "get current word and grep it"
-  (interactive)
-  (let
-      ((buffer (get-buffer-create "*grep at point*")))
-      (display-buffer buffer))
-  (let*
-      (
-       (directory (getenv "PWD"))
-       (word (thing-at-point 'symbol))
-       (buffer (get-buffer-create "*grep at point*"))
-       (command
-         (format
-           "cd %s && grep -nH -r '%s' ."
-           directory
-           word
-           )
-         )
-       )
-    (message "%s" directory)
-    (message "%s" command)
-    (shell-command command buffer)
-    )
-  )
-(global-set-key [f3] 'grep-at-point)
+(add-to-list 'load-path "~/.emacs.d/grep-at-point")
+(require 'grep-at-point)
+(global-set-key [f3] 'nopromp-grep-at-point)
+(global-set-key [M-g M-a] 'grep-at-point)
+
+(global-set-key [f4] 'show-paren-mode)
