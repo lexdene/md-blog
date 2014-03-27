@@ -42,6 +42,10 @@
 
 [emacs/window.md](emacs/window.md)
 
+## 列出所有远程分支及最后commit时间并按时间排序
+
+[git/list-remote-branches-with-the-last-commit-time.md](git/list-remote-branches-with-the-last-commit-time.md)
+
 ## 说一说我喜欢和讨厌的语法
 
 [me/rank-explain.md](me/rank-explain.md)
