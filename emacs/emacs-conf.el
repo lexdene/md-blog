@@ -1,3 +1,7 @@
+;;
+;; 1. global custom
+;;
+
 (setq-default make-backup-files nil)
 (setq-default indent-tabs-mode nil)
 ; newline at end of file
@@ -6,10 +10,23 @@
 (setq scroll-step 1)
 ; tab
 (setq default-tab-width 4)
-(setq tab-stop-list (number-sequence 4 200 4))
+(setq tab-stop-list (number-sequence 0 100 2))
 (setq c-basic-offset 4)
 ; menu bar mode
 (menu-bar-mode -1)
+; column number mode
+(setq column-number-mode t)
+; another key of goto-line
+(global-set-key (kbd "M-s") 'goto-line)
+
+;;
+;; 2. plugins
+;;
+
+; load path
+(let ((default-directory "~/.emacs.d/lisp/"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ; insert-datetime
 (defun insert-datetime ()
@@ -19,7 +36,6 @@
 (global-set-key [f6] 'insert-datetime)
 
 ; linum mode
-(add-to-list 'load-path "~/.emacs.d")
 (require 'linum)
 (global-linum-mode 1)
 
@@ -35,7 +51,6 @@
 ; coffee-mode
 ; cd ~/.emacs.d
 ; git clone https://github.com/lexdene/coffee-mode.git
-(add-to-list 'load-path "~/.emacs.d/coffee-mode")
 (require 'coffee-mode)
 (defun coffee-custom ()
   "coffee-mode-hook"
@@ -57,9 +72,6 @@
 (setq display-time-format " %Y-%m-%d %A %H:%M ")
 (setq display-time-interval 10)
 (display-time-mode 1)
-
-; .emacs.d
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 ; white space
 ;(global-whitespace-mode 1)
@@ -83,7 +95,6 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 
 ; compile make
-(add-to-list 'load-path "~/.emacs.d/compile-make")
 (require 'compile-make)
 (global-set-key [f9] 'compile-make)
 (setq compilation-scroll-output t)
@@ -93,6 +104,15 @@
 (add-to-list 'load-path "~/.emacs.d/grep-at-point")
 (require 'grep-at-point)
 (global-set-key [f3] 'nopromp-grep-at-point)
-(global-set-key [M-g M-a] 'grep-at-point)
+(global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
+(global-set-key (kbd "M-g M-r 2") 'grep-at-point)
 
 (global-set-key [f4] 'show-paren-mode)
+
+(require 'ruby-mode)
+(add-to-list 'auto-mode-alist
+             '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist
+             '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
+
+(require 'haml-mode)
