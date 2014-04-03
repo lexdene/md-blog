@@ -54,6 +54,10 @@
 
 [me/rank.md](me/rank.md)
 
+## 人人网《东北Linux》公共主页被分享最多的30条状态
+
+[me/renren-north-east-linux-popular-statuses.md](me/renren-north-east-linux-popular-statuses.md)
+
 ## 简历 - 刘项 - Python
 
 [me/resume-python.md](me/resume-python.md)
