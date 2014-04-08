@@ -99,9 +99,7 @@
 (global-set-key [f9] 'compile-make)
 (setq compilation-scroll-output t)
 
-
 ; grep at point
-(add-to-list 'load-path "~/.emacs.d/grep-at-point")
 (require 'grep-at-point)
 (global-set-key [f3] 'nopromp-grep-at-point)
 (global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
@@ -116,3 +114,5 @@
              '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
 (require 'haml-mode)
+
+(require 'gedit-mode)
