@@ -1,5 +1,4 @@
 git config --global user.name "Elephant Liu"
-git config --global user.email "lexdene at sohu dot com"
 
 git config --global color.branch "auto"
 git config --global color.ui "auto"
