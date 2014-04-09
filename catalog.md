@@ -74,6 +74,10 @@
 
 [mysql/order_by_case_sensitive.md](mysql/order_by_case_sensitive.md)
 
+## MySQL的Point类型与Spatial Index
+
+[mysql/point-spatial-index.md](mysql/point-spatial-index.md)
+
 ##【apache+cgi+python】cgi接口浅析
 
 [python/webpy/apache-cgi-python.md](python/webpy/apache-cgi-python.md)
