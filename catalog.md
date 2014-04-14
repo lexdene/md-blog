@@ -46,6 +46,10 @@
 
 [git/list-remote-branches-with-the-last-commit-time.md](git/list-remote-branches-with-the-last-commit-time.md)
 
+## git diff 显示创建分支后的修改
+
+[git/show-diff-after-create-branch.md](git/show-diff-after-create-branch.md)
+
 ## 说一说我喜欢和讨厌的语法
 
 [me/rank-explain.md](me/rank-explain.md)
