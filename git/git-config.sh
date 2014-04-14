@@ -27,6 +27,7 @@ git config --global alias.dtr "diff-tree --no-commit-id --name-only -r" # 很久
 git config --global alias.dst "diff --name-status" # 使用一种类似于SVN的格式来输出diff
 git config --global alias.ffm "merge --ff-only"
 git config --global alias.nem "merge --no-edit"
+git config --global alias.mgab "merge --abort"
 git config --global alias.rs "reset"
 git config --global alias.rsh "reset --hard"
 git config --global alias.rshp "reset --hard HEAD^"
