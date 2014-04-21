@@ -98,6 +98,10 @@
 
 [td/tech.md](td/tech.md)
 
+## 关闭ubuntu的apt自动更新
+
+[ubuntu/disable_apt_auto_update.md](ubuntu/disable_apt_auto_update.md)
+
 ## 使用css实现自动计算段落编号
 
 [webfront/auto-count-section-number-by-css/auto-count-section-number-by-css.md](webfront/auto-count-section-number-by-css/auto-count-section-number-by-css.md)
