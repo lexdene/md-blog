@@ -32,6 +32,9 @@ git config --global alias.rs "reset"
 git config --global alias.rsh "reset --hard"
 git config --global alias.rshp "reset --hard HEAD^"
 git config --global alias.rss "reset --soft"
+git config --global alias.ss "stash"
+git config --global alias.ssp "stash pop"
+git config --global alias.ssd "stash drop"
 
 git config --global core.editor "emacs"
 
