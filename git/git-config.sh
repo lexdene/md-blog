@@ -41,3 +41,5 @@ git config --global core.editor "emacs"
 git config --global push.default current
 
 git config --global mergetool.keepBackup false
+
+git config --global core.excludesfile ~/workspace/write/md-blog/git/git-ignore
