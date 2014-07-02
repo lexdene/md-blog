@@ -26,10 +26,6 @@ E-mail:
 
 ## 1. C++
 
-* 熟悉C++语法，熟悉STL。
-* 熟悉Qt，使用Qt完成多个项目
-* 写过很多关于C++的文章
-
 ### 1.0. DGP游戏平台
 
 * 使用技术：C++，Qt，网络通信，多线程
@@ -90,13 +86,11 @@ E-mail:
 
 ## 3. Python
 
-* 基本语法、生成器、迭代器、协程
 * `pep8`, `pylint`
 * `PyQt`, `django`, `celery`, `web.py`, `tornado`, `mako`, `jinja2`
 
 ### 3.0. python-drape
 
-* drape是由我一个人设计并编码实现的。
 * drape是一个Python的web后台框架。
 * 详情见：http://testdrape.sinaapp.com/
 
@@ -155,6 +149,12 @@ E-mail:
 * `Python`, `django`, `tornado`, `celery`, `mongodb`
 * `js`, `jQuery`, `bootstrap`
 
+## 3. 课程格子
+
+2014年2月至今
+
+* Ruby on Rails
+
 # 教育经历
 
 * 2007年09月，考入大连理工大学土木工程专业。
@@ -165,7 +165,6 @@ E-mail:
 * 2010年6月5日至今，担任大连理工大学BBS碧海青天站 _算法设计与程序竞赛版_ 版主。
 * 2010年6月14日至今，担任大连理工大学BBS碧海青天站 _Linux & Unix_ 版副版主。
 * 思想记的作者之一（http://www.verythought.com/）
-* 乐碰的作者之一（尚在开发中）
 
 # 常用的网络id
 
@@ -175,6 +174,4 @@ E-mail:
 
 # 注
 
-1. 刘项是我最常用的名字，但是由于某些奇怪的原因，我身份证上的名字并不是刘项
-2. 我想找一份使用Linux做开发的工作。如果您解不开我的E-mail地址，那么我对您的公司不感兴趣。
-3. 提供笔记本电脑：Thinpad X230i的优先；苹果电脑的基本不考虑。
+* 刘项是我最常用的名字，但并不是我的真名
