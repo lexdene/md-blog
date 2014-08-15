@@ -89,10 +89,10 @@
 ; windmove
 (global-set-key [M-down] 'windmove-down)
 (global-set-key [M-up] 'windmove-up)
-(global-set-key (kbd "C-c <down>") 'windmove-down)
-(global-set-key (kbd "C-c <up>") 'windmove-up)
-(global-set-key (kbd "C-c <left>") 'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c n") 'windmove-down)
+(global-set-key (kbd "C-c p") 'windmove-up)
+(global-set-key (kbd "C-c b") 'windmove-left)
+(global-set-key (kbd "C-c f") 'windmove-right)
 
 ; compile make
 (require 'compile-make)
