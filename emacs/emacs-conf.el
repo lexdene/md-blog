@@ -114,5 +114,6 @@
              '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
 (require 'haml-mode)
+(add-to-list 'ac-modes 'haml-mode)
 
 (require 'gedit-mode)
