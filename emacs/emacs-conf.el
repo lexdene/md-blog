@@ -116,5 +116,6 @@
 
 (require 'haml-mode)
 (add-to-list 'ac-modes 'haml-mode)
+(modify-syntax-entry ?_ "_" haml-mode-syntax-table)
 
 (require 'gedit-mode)
