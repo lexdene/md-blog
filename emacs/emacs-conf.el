@@ -105,7 +105,8 @@
 (global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
 (global-set-key (kbd "M-g M-r 2") 'grep-at-point)
 
-(global-set-key [f4] 'show-paren-mode)
+; show paren mode
+(show-paren-mode t)
 
 (require 'ruby-mode)
 (add-to-list 'auto-mode-alist
