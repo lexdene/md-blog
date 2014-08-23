@@ -120,3 +120,10 @@
 
 (require 'gedit-mode)
 (global-gedit-mode t)
+
+(add-hook 'ruby-mode-hook
+  '(lambda ()
+    (setq tab-width 2)))
+
+(require 'column-marker)
+(column-marker-1 80)
