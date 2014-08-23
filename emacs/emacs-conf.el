@@ -119,3 +119,4 @@
 (modify-syntax-entry ?_ "_" haml-mode-syntax-table)
 
 (require 'gedit-mode)
+(global-gedit-mode t)
