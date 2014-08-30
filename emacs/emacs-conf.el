@@ -59,6 +59,7 @@
   (setq coffee-tab-width 2)
   (setq tab-width 2))
 (add-hook 'coffee-mode-hook 'coffee-custom)
+(add-to-list 'ac-modes 'coffee-mode)
 
 ; refresh file
 (defun refresh-file ()
@@ -117,6 +118,9 @@
 (require 'haml-mode)
 (add-to-list 'ac-modes 'haml-mode)
 (modify-syntax-entry ?_ "_" haml-mode-syntax-table)
+(add-hook 'haml-mode-hook
+  '(lambda ()
+    (setq tab-width 2)))
 
 (require 'gedit-mode)
 (global-gedit-mode t)
