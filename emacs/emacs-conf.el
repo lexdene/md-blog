@@ -9,15 +9,27 @@
 ; scroll
 (setq scroll-step 1)
 ; tab
-(setq default-tab-width 4)
+(setq default-tab-width 2)
+(setq tab-width 2)
+(setq-default tab-width 2)
 (setq tab-stop-list (number-sequence 0 100 2))
-(setq c-basic-offset 4)
+(setq c-basic-offset 2)
 ; menu bar mode
 (menu-bar-mode -1)
+(if tool-bar-mode
+  (tool-bar-mode -1))
 ; column number mode
 (setq column-number-mode t)
 ; another key of goto-line
 (global-set-key (kbd "M-s") 'goto-line)
+; default font
+(set-face-attribute 'default nil :font "Monaco 14")
+; Chinese Font
+(if (fboundp 'set-fontset-font)
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset (font-spec :family "STHeiti"
+                                         :size 14))))
 
 ;;
 ;; 2. plugins
@@ -131,3 +143,7 @@
 
 (require 'column-marker)
 (column-marker-1 80)
+
+(require 'scss-mode)
+(setq scss-compile-at-save nil)
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
