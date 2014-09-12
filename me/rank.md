@@ -22,7 +22,7 @@
 4. Lambda expression(anonymous function)
 5. Delimit blocks by indentation
 6. List comprehension
-7. Typechecking arguments in functions
+7. static type checking
 8. Constant and enumeration
 9. Compilation error
 
