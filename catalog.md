@@ -18,6 +18,10 @@
 
 [cpp_is_dangerous/1.1/1.1.md](cpp_is_dangerous/1.1/1.1.md)
 
+## 安装debian时的"Standard system utilities"都包括哪些软件包?
+
+[debian/what_does_the_standard_system_task_include.md](debian/what_does_the_standard_system_task_include.md)
+
 ## emacs中使用auto-complete
 
 [emacs/auto-complete.md](emacs/auto-complete.md)
