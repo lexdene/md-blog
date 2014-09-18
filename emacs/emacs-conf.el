@@ -63,15 +63,16 @@
 ; coffee-mode
 ; cd ~/.emacs.d
 ; git clone https://github.com/lexdene/coffee-mode.git
-(require 'coffee-mode)
-(defun coffee-custom ()
-  "coffee-mode-hook"
+(if (require 'coffee-mode nil t)
+  (progn
+    (defun coffee-custom ()
+      "coffee-mode-hook"
 
-  ;; tab-width
-  (setq coffee-tab-width 2)
-  (setq tab-width 2))
-(add-hook 'coffee-mode-hook 'coffee-custom)
-(add-to-list 'ac-modes 'coffee-mode)
+      ;; tab-width
+      (setq coffee-tab-width 2)
+      (setq tab-width 2))
+    (add-hook 'coffee-mode-hook 'coffee-custom)
+    (add-to-list 'ac-modes 'coffee-mode)))
 
 ; refresh file
 (defun refresh-file ()
@@ -96,8 +97,8 @@
 
 ; vline
 ; download from http://www.emacswiki.org/emacs/download/vline.el
-(require 'vline)
-(global-set-key [f7] 'vline-mode)
+(if (require 'vline nil t)
+  (global-set-key [f7] 'vline-mode))
 
 ; windmove
 (global-set-key [M-down] 'windmove-down)
@@ -108,42 +109,58 @@
 (global-set-key (kbd "C-c f") 'windmove-right)
 
 ; compile make
-(require 'compile-make)
-(global-set-key [f9] 'compile-make)
-(setq compilation-scroll-output t)
+(if (require 'compile-make nil t)
+  (progn
+    (global-set-key [f9] 'compile-make)
+    (setq compilation-scroll-output t)))
 
 ; grep at point
-(require 'grep-at-point)
-(global-set-key [f3] 'nopromp-grep-at-point)
-(global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
-(global-set-key (kbd "M-g M-r 2") 'grep-at-point)
+(if (require 'grep-at-point nil t)
+  (progn
+    (global-set-key [f3] 'nopromp-grep-at-point)
+    (global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
+    (global-set-key (kbd "M-g M-r 2") 'grep-at-point)))
+
+; show file name
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+(global-set-key [f10] 'show-file-name)
 
 ; show paren mode
 (show-paren-mode t)
 
+(if (require 'python nil t)
+  (progn
+    (add-to-list 'auto-mode-alist
+      '("\\.tac\\'" . python-mode))))
+
 (require 'ruby-mode)
 (add-to-list 'auto-mode-alist
-             '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+  '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist
-             '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
-
-(require 'haml-mode)
-(add-to-list 'ac-modes 'haml-mode)
-(modify-syntax-entry ?_ "_" haml-mode-syntax-table)
-(add-hook 'haml-mode-hook
-  '(lambda ()
-    (setq tab-width 2)))
-
-(require 'gedit-mode)
-(global-gedit-mode t)
-
+  '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook
   '(lambda ()
     (setq tab-width 2)))
 
-(require 'column-marker)
-(column-marker-1 80)
+(if (require 'haml-mode nil t)
+  (progn
+    (add-to-list 'ac-modes 'haml-mode)
+    (modify-syntax-entry ?_ "_" haml-mode-syntax-table)
+    (add-hook 'haml-mode-hook
+      '(lambda ()
+        (setq tab-width 2)))))
 
-(require 'scss-mode)
-(setq scss-compile-at-save nil)
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(if (require 'gedit-mode nil t)
+  (global-gedit-mode t))
+
+(if (require 'column-marker nil t)
+  (column-marker-1 80))
+
+(if (require 'scss-mode nil t)
+  (progn
+    (setq scss-compile-at-save nil)
+    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))))
