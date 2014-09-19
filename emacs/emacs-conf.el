@@ -36,9 +36,20 @@
 ;;
 
 ; load path
-(let ((default-directory "~/.emacs.d/lisp/"))
-  (normal-top-level-add-to-load-path '("."))
-  (normal-top-level-add-subdirs-to-load-path))
+;; compare with `normal-top-level-add-subdirs-to-load-path`
+;; this function:
+;;     1. no recursion find subdirs
+;;     2. no check on name of subdir
+;;         for example: a subdir named `xxx.el`
+(defun add-subdirs-to-load-path (base-path)
+  "add dirs in `base-path` to load-path"
+  (dolist (file (directory-files base-path))
+    ; exclude . and ..
+    (unless (member file '("." ".."))
+      (let ((file-abs-path (expand-file-name file base-path)))
+        (if (file-directory-p file-abs-path)
+          (add-to-list 'load-path file-abs-path))))))
+(add-subdirs-to-load-path "~/.emacs.d/lisp")
 
 ; insert-datetime
 (defun insert-datetime ()
