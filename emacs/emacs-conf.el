@@ -76,13 +76,10 @@
 ; git clone https://github.com/lexdene/coffee-mode.git
 (if (require 'coffee-mode nil t)
   (progn
-    (defun coffee-custom ()
-      "coffee-mode-hook"
-
-      ;; tab-width
-      (setq coffee-tab-width 2)
-      (setq tab-width 2))
-    (add-hook 'coffee-mode-hook 'coffee-custom)
+    (add-hook 'coffee-mode-hook
+      (lambda()
+        (setq coffee-tab-width 2)
+        (setq tab-width 2)))
     (add-to-list 'ac-modes 'coffee-mode)))
 
 ; refresh file
@@ -145,6 +142,9 @@
 
 (if (require 'python nil t)
   (progn
+    (add-hook 'python-mode-hook
+      (lambda()
+        (setq tab-width 4)))
     (add-to-list 'auto-mode-alist
       '("\\.tac\\'" . python-mode))))
 
@@ -154,7 +154,7 @@
 (add-to-list 'auto-mode-alist
   '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 (add-hook 'ruby-mode-hook
-  '(lambda ()
+  (lambda ()
     (setq tab-width 2)))
 
 (if (require 'haml-mode nil t)
@@ -162,7 +162,7 @@
     (add-to-list 'ac-modes 'haml-mode)
     (modify-syntax-entry ?_ "_" haml-mode-syntax-table)
     (add-hook 'haml-mode-hook
-      '(lambda ()
+      (lambda ()
         (setq tab-width 2)))))
 
 (if (require 'gedit-mode nil t)
