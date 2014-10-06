@@ -40,8 +40,7 @@ E-mail:
 通过扩展webkit为js提供更加强大的功能。
 
 ### 1.2. gcc五分钟系列
-* 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-11
-* github 主页：https://github.com/lexdene/gcc_five_minute
+* 链接：https://github.com/lexdene/gcc_five_minute
 * 内容简介：
  1. 通过大量简单的例子介绍 `gcc` 的用法。
  2. 每节内容简短，控制在5分钟以内。
@@ -104,29 +103,37 @@ E-mail:
 * 了解`backbone`, `angular`
 * 了解`jQuery Mobile`, `html5`及移动端开发。
 
-## 5. 设计模式
+## 5. emacs lisp
+
+写过几个emacs插件:
+
+* gedit-mode: https://github.com/lexdene/gedit-mode
+* grep-at-point: https://github.com/lexdene/grep-at-point
+* compile-make: https://github.com/lexdene/compile-make
+
+## 6. 设计模式
 
 * 读过《设计模式 可复用面向对象软件的基础》
 * 了解常用的设计模式，如：单例，享元，工厂方法，抽象工厂等并在项目中实际应用
 
-## 6. 编程语言
+## 7. 编程语言
 
 * 我喜欢的编程语言有（按排名顺序）：`C++`, `Python`, `Lua`, `CoffeeScript`, `bash`, `haml`
 
-## 7. 版本控制
+## 8. 版本控制
 
 * `git`, `git-flow`
 * git重度用户
 * 曾在公司内负责git培训与考核
 
-## 8. 开发环境
+## 9. 开发环境
 
 * ubuntu
 * gedit, emacs
 * bash
 * gcc, gdb, chrome
 
-## 9. 领导/教学
+## 10. 领导/教学
 
 * 曾担任大连理工大学ACM/ICPC竞赛集训队领队及新人培训/赛前集训主讲人,带领大连理工大学ACM/ICPC竞赛集训队获得过regional比赛2银1铜的成绩
 * 曾在大连理工大学校级选修课《ACM算法实践》当过3学期的讲课人
@@ -152,7 +159,13 @@ E-mail:
 
 2014年2月至今
 
-* Ruby on Rails
+* `Ruby on Rails`
+* `html5`, `CoffeeScript`, 微信分享页面
+* SEO
+
+# 期望薪水
+
+税后: 20k/月
 
 # 教育经历
 
