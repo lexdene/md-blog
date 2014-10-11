@@ -39,23 +39,11 @@ E-mail:
 利用webkit，使用html5, js等技术实现客户端程序。
 通过扩展webkit为js提供更加强大的功能。
 
-### 1.2. gcc五分钟系列
-* 链接：https://github.com/lexdene/gcc_five_minute
-* 内容简介：
- 1. 通过大量简单的例子介绍 `gcc` 的用法。
- 2. 每节内容简短，控制在5分钟以内。
+### 1.2. 写过一些C++有关的blog
 
-### 1.3. C++是很危险的
-* 网页版地址：http://elephantliu.blog.51cto.com/1107116/d-12
-* 内容简介：
- 1. 通过简短的代码展示一些C++中不易发现的错误。
- 2. 希望提高 C++程序员对 C++的了解，减少错误。
-
-### 1.4. C++与元编程
-
-* 地址：https://github.com/lexdene/md-blog/blob/master/cpp/
-* 现更新至第3节
-* C++在元编程方面的能力，比一些动态语言差的很远。但并不是完全没有。此系列文章介绍一些C++的高级用法。
+* 《gcc五分钟系列》: https://github.com/lexdene/gcc_five_minute
+* 《C++是很危险的》: https://github.com/lexdene/md-blog/tree/master/cpp_is_dangerous
+* 《C++与元编程》: https://github.com/lexdene/md-blog/blob/master/cpp
 
 ## 2. Linux
 
