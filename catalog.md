@@ -167,3 +167,21 @@
 [debian/what_does_the_standard_system_task_include.md](debian/what_does_the_standard_system_task_include.md)
 
 创建时间: 2014-09-18 14:30:11
+
+## C++是很危险的：第一章 构造函数：第二节 构造函数与多态
+
+[cpp_is_dangerous/1.2/1.2.md](cpp_is_dangerous/1.2/1.2.md)
+
+创建时间: 2014-10-11 11:01:04
+
+## C++是很危险的：第一章 构造函数：第三节 构造函数与初始化列表
+
+[cpp_is_dangerous/1.3/1.3.md](cpp_is_dangerous/1.3/1.3.md)
+
+创建时间: 2014-10-11 11:06:31
+
+## C++是很危险的：第一章 构造函数：第四节 构造函数的调用
+
+[cpp_is_dangerous/1.4/1.4.md](cpp_is_dangerous/1.4/1.4.md)
+
+创建时间: 2014-10-11 11:12:38
