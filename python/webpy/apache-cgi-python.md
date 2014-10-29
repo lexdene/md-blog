@@ -1,4 +1,4 @@
-#【apache+cgi+python】cgi接口浅析
+# 【apache+cgi+python】cgi接口浅析
 
 虽然现在开发web用的都是一些成熟的框架，
 使我们可以不用关心底层的接口逻辑，
