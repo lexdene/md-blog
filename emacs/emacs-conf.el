@@ -121,6 +121,7 @@
 (if (require 'compile-make nil t)
   (progn
     (global-set-key [f9] 'compile-make)
+    (global-set-key (kbd "M-g c") 'compile-make-ex)
     (setq compilation-scroll-output t)))
 
 ; grep at point
@@ -176,3 +177,9 @@
   (progn
     (setq scss-compile-at-save nil)
     (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))))
+
+(if (require 'markdown-mode nil t)
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))))
+
+(add-to-list 'auto-mode-alist '("\\.hbs\\'". html-mode))
