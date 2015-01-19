@@ -72,6 +72,9 @@
 (global-auto-complete-mode t)
 (ac-config-default)
 
+;; disable electric indent mode
+(setq-default electric-indent-mode nil)
+
 ; coffee-mode
 ; cd ~/.emacs.d
 ; git clone https://github.com/lexdene/coffee-mode.git
