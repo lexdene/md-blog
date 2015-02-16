@@ -1,8 +1,8 @@
-<html><head><title>如何在debian系统上禁用apt的pdiff更新机制 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>如何在debian系统上禁用apt的pdiff更新机制</h1>
+<html><head><title>如何在debian系统上禁用apt的pdiff更新机制 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/md-blog/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>如何在debian系统上禁用apt的pdiff更新机制</h1>
 <h2>临时禁用方法:</h2>
 <pre><code>apt-get update -o Acquire::Pdiffs=false
 </code></pre>
 <h2>永久禁用方法:</h2>
 <p>将下面这句话加到/etc/apt/apt.conf文件中。</p>
 <pre><code>Acquire::PDiffs "false";
-</code></pre></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>
+</code></pre></div><div class="bottom-area"><a href="/md-blog/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>
