@@ -1,0 +1,53 @@
+<html><head><title>使用css实现自动计算段落编号 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>使用css实现自动计算段落编号</h1>
+<p>在写文档的时候，
+我们通常会把内容分成若干个段落。
+每个段落都有一个标题。</p>
+<p>而且我们会把段落分成若干个级别，
+然后使用h1/h2/h3来做各个级别的标题。</p>
+<p>有的时候呢，
+为了理清段落之间的关系，
+我们会给各个标题前加上编号。</p>
+<p>比如：</p>
+<pre><code>&lt;h1&gt;1. 编程语言&lt;/h1&gt;
+
+&lt;h2&gt;1.1 C++&lt;/h2&gt;
+&lt;h2&gt;1.2 Python&lt;/h2&gt;
+</code></pre>
+<p>手动维护编号实在是一件很闹心的事情，
+如果位置靠前的某个段落被删除了，
+那么几乎每个段落的编号都要手动修改一下。</p>
+<p>我们可以使用js脚本来计算每个段落的编号，
+然后自动添加上去。
+这样简单的代码，我相信你一定可以写出来。</p>
+<p>不过今天我们要讲如何用css来实现这样的功能。</p>
+<p>首先，css中的<code>counter-reset</code>可以创建一个计数器。
+<code>counter-increment</code>可以将计数器加1。</p>
+<p>然后，只需要用<code>counter</code>获取计数器的值，
+把它填写在<code>content</code>中就行啦！</p>
+<p>直接上代码：</p>
+<pre><code>body {
+    counter-reset: chapter;
+}
+
+h1 {
+    counter-reset: section;
+}
+h1:before {
+    counter-increment: chapter;
+    content: counter(chapter) ". ";
+}
+
+h2 {
+    counter-reset: subsection;
+}
+h2:before {
+    counter-increment: section;
+    content: counter(chapter) "." counter(section) " ";
+}
+
+h3:before {
+    counter-increment: subsection;
+    content: counter(chapter) "." counter(section) "." counter(subsection) " ";
+}
+</code></pre>
+<p>完整代码可以参见<a href="demo.html">demo</a></p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

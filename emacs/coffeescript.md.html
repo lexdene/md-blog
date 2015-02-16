@@ -1,0 +1,23 @@
+<html><head><title>在emacs中安装配置CoffeeScript环境 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>在emacs中安装配置CoffeeScript环境</h1>
+<p>最近用CoffeeScript开发前端，<br />
+CoffeeScript可以编译成优质的js代码。<br />
+但是在emacs中编写CoffeeScript，<br />
+既没有缩进，也没有高亮，这很难受。<br />
+在网上搜索了半天，
+找到了一个开源的coffee-mode。<br />
+地址： https://github.com/defunkt/coffee-mode</p>
+<h2>安装</h2>
+<pre><code>cd ~/.emacs.d
+git clone git://github.com/defunkt/coffee-mode.git
+</code></pre>
+<h2>配置</h2>
+<p>在~/.emacs中添加以下内容：</p>
+<pre><code>; coffee-mode
+(add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(require 'coffee-mode)
+</code></pre>
+<h2>参考资料</h2>
+<ol>
+<li>http://ozmm.org/posts/coffee_mode.html</li>
+<li>https://github.com/defunkt/coffee-mode</li>
+</ol></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

@@ -1,0 +1,83 @@
+<html><head><title>apache + cgi + web.py 时遇见的pathinfo问题 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>apache + cgi + web.py 时遇见的pathinfo问题</h1>
+<p>首先，我想把web.py放在一个子目录下，
+因为其它目录还有其它的文件。</p>
+<p>网站根目录为</p>
+<pre><code>/var/www
+</code></pre>
+<p>web.py的目录为</p>
+<pre><code>/var/www/webpy
+</code></pre>
+<h2>apache的配置</h2>
+<pre><code>gedit /etc/apache2/sites-available/default
+
+&lt;VirtualHost *:80&gt;
+    DocumentRoot /var/www
+    &lt;Directory "/var/www/webpy/"&gt;
+        Options +ExecCGI +FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+<h2>.htaccess的配置</h2>
+<pre><code>AddHandler cgi-script .py
+DirectoryIndex py-cgi-index.py
+AddType text/html .py
+&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ py-cgi-index.py/$1 [L]
+&lt;/IfModule&gt;
+</code></pre>
+<h2>py-cgi-index.py的代码</h2>
+<pre><code>#!/usr/bin/env python
+
+import sys, os
+abspath = os.path.dirname(__file__)
+sys.path.append(abspath)
+os.chdir(abspath)
+
+import web
+
+class Hello:
+    def GET(self,path=''):
+        return path
+
+if __name__ == "__main__":
+    if os.environ.has_key('PATH_INFO'):
+        urls = (
+            '/(.*)', 'Hello'
+        )
+    else:
+        urls = (
+            '/.*', 'Hello'
+        )
+    application = web.application(urls, locals())
+
+    application.run()
+</code></pre>
+<h2>遇见的问题</h2>
+<h3>urls的配置</h3>
+<p>我之前的写法是:</p>
+<pre><code>urls = (
+    '/(.*)', 'Hello'
+)
+</code></pre>
+<p>这样写，如果访问的是:</p>
+<pre><code>http://localhost/webpy/xxx
+</code></pre>
+<p>它会正常的输出:</p>
+<pre><code>xxx
+</code></pre>
+<p>这说明RewriteRule正常的工作了。
+但是如果访问</p>
+<pre><code>http://localhost/webpy/
+</code></pre>
+<p>它会报告异常，意思是urls中没有匹配的路由规则。
+搜索了一圈，发现其实这个时候RewriteRule并没有工作，
+而是DirectoryIndex在起作用。</p>
+<p>后来，我看了一些开源的php框架的源代码，
+发现想知道RewriteRule有没有工作，可以通过环境变量中是否有'PATH_INFO'来判断。
+最终变成了现在的代码。</p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

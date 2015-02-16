@@ -1,0 +1,30 @@
+<html><head><title>C++是很危险的：第一章 构造函数：第四节 构造函数的调用 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>C++是很危险的：第一章 构造函数：第四节 构造函数的调用</h1>
+<p>《C++是很危险的》中的代码全部来自网络及各种C++相关的书籍。
+目的不是为了谴责C++，
+而是希望大家注意C++中的某些细节。
+这些细节在实际工程中根本用不到，所以大家就当笑话看看就好。</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Foo{
+public:
+    Foo()
+    {
+        cout &lt;&lt; 1 &lt;&lt; endl;
+    }
+    Foo(int a=4){
+        cout&lt;&lt;a&lt;&lt;endl;
+    }
+};
+
+int main(){
+    Foo a(3);
+    Foo b();
+    return 0;
+}
+</code></pre>
+<h2>答案</h2>
+<p>只有一个3。</p>
+<h2>解释</h2>
+<p>在<code>C++</code>中, <code>Foo b()</code>这样的语法是声明一个函数,
+它的返回值类型是<code>Foo</code>, 参数列表是空。</p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

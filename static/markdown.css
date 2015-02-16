@@ -1,0 +1,50 @@
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+.markdown-content {
+  padding-bottom: 45px;
+  counter-reset: chapter-lv-1; }
+  .markdown-content h2 {
+    counter-reset: chapter-lv-2; }
+    .markdown-content h2:before {
+      counter-increment: chapter-lv-1;
+      content: counter(chapter-lv-1) ". "; }
+  .markdown-content h3 {
+    counter-reset: chapter-lv-3; }
+    .markdown-content h3:before {
+      counter-increment: chapter-lv-2;
+      content: counter(chapter-lv-1) "." counter(chapter-lv-2) ". "; }
+  .markdown-content h4:before {
+    counter-increment: chapter-lv-3;
+    content: counter(chapter-lv-1) "." counter(chapter-lv-2) "." counter(chapter-lv-3) ". "; }
+  .markdown-content pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    border-radius: 3px; }
+    .markdown-content pre code {
+      display: block;
+      padding: 0.5em; }
+
+body {
+  margin: 8px; }
+  body > .bottom-area {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0 -8px;
+    line-height: 40px;
+    height: 40px;
+    width: 100%; }
+    body > .bottom-area > a {
+      display: inline-block;
+      width: 33%;
+      height: 100%;
+      color: white;
+      text-align: center; }
+
+/*# sourceMappingURL=markdown.css.map */

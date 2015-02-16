@@ -1,0 +1,34 @@
+<html><head><title>关闭ubuntu的apt自动更新 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>关闭ubuntu的apt自动更新</h1>
+<h2>起因</h2>
+<p>有的时候，在ubuntu里执行</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>的时候，会报错误：</p>
+<pre><code>E: 无法获得锁 /var/lib/apt/lists/lock - open (11: 资源暂时不可用)
+E: 无法对目录 /var/lib/apt/lists/ 加锁
+</code></pre>
+<h2>搜寻</h2>
+<p>我猜测有后台进程在执行apt-get，所以查看了一下:</p>
+<pre><code>ps aux | grep apt
+</code></pre>
+<p>结果发现了这一行:</p>
+<pre><code>/bin/sh /etc/cron.daily/apt
+</code></pre>
+<p>打开看看这个文件，在文件的开头发现了这几句:</p>
+<pre><code>#  APT::Periodic::Enable "1";
+#  - Enable the update/upgrade script (0=disable)
+
+#  APT::Periodic::Update-Package-Lists "0";
+#  - Do "apt-get update" automatically every n-days (0=disable)
+</code></pre>
+<p>看来自动更新是可以配置的。</p>
+<h2>解决</h2>
+<p>打开配置文件:</p>
+<pre><code>sudo emacs /etc/apt/apt.conf.d/10periodic
+</code></pre>
+<p>在开头加入一行:</p>
+<pre><code>APT::Periodic::Enable "0";
+</code></pre>
+<p>或者把第一行改成:</p>
+<pre><code>APT::Periodic::Update-Package-Lists "0";
+</code></pre></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

@@ -1,0 +1,179 @@
+<html><head><title>《C++元编程》第二节  编译期判断继承关系 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>《C++元编程》第二节  编译期判断继承关系</h1>
+<h2>问题描述</h2>
+<p>在C++中，随便给你两个class，
+如何判断其中一个class是否继承自另一个class？（思考一下...）</p>
+<h2>函数重载</h2>
+<p>函数重载是C++中的一个很重要，也很有用的东西。
+用好了，威力无穷；
+用的不好，毁灭世界。</p>
+<p>我们的思路是，
+判断是否继承交给函数重载来判断。
+让它返回不同的值。</p>
+<pre><code>template&lt;typename Base, typename Derived&gt;
+class ConvertTester1{
+public:
+    static bool is_derived(){
+        is_derived_from(Derived());
+    }
+private:
+    static bool is_derived_from(Base){
+        return true;
+    }
+    static bool is_derived_from(...){
+        return false;
+    }
+};
+</code></pre>
+<p>如果Derived继承自Base，
+那么<code>is_derived_from(Derived())</code>
+就会调用<code>static bool is_derived_from(Base)</code>函数。
+否则就会调用<code>static bool is_derived_from(...)</code>函数。</p>
+<p>三个点<code>...</code>是C语言中的一个不常用的语法（C++继承了C），
+表示的意思是不定长的参数列表。
+它接受所有类型和个数的参数。</p>
+<h2>编译期</h2>
+<p>不过上面的用法还有可以提高的地方。
+比如说，能否在编译期来做这个判断？</p>
+<p>将这个判断改到编译期有什么好处呢？
+其实好处很多的！
+我会在以后的几节给大家详细的讲解，
+C++可以在编译期做很多神奇的事情。</p>
+<p>那么如何实现在编译期来做这个事情呢？</p>
+<p>C++在编译期的三大神器：</p>
+<ul>
+<li>模板偏特化</li>
+<li>函数重载</li>
+<li>sizeof</li>
+</ul>
+<p>首先，模板偏特化肯定没什么疑问，它肯定是在编译期指定的。</p>
+<p>函数重载，其实也是在编译期指定的。
+不信？
+如果将C++代码编译成汇编代码，
+你就会发现，
+哪个类型的参数调用哪个版本的函数，
+在编译期就已经决定好了的。</p>
+<p>最后，sizeof。
+对于一些新手来说，
+通常会对sizeof有些误解。
+其实sizeof根本不是一个函数，
+它只是一个运算符。
+跟加减乘除大于小于什么的一样。
+而且，它会在编译期直接对它求长的表达式做类型推导，
+然后直接将推导出来的类型的长度写入编译出来的代码中。
+也就是说，
+它 <em>根本不会</em> 执行它求长的表达式。
+不信？
+看下面的例子：</p>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+
+int main(){
+    int i = 0;
+    cout &lt;&lt; sizeof(i++) &lt;&lt; endl;
+    cout &lt;&lt; i &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+<p>第一行输出，基本上（在现在 <em>2013年</em> 的主流的PC机上）会是4。
+关键是第二行。</p>
+<p>sizeof根本不会执行它求长的表达式，
+所以i的值仍然是0。</p>
+<p>本节中，
+我们会用到函数重载和sizeof。</p>
+<p>至于模板偏特化，
+上一节就用到了，
+以后也会经常用到的。</p>
+<h2>编译期判断</h2>
+<p>那么如何实现在编译期判断继承关系呢？</p>
+<p>我们的思路是，</p>
+<ol>
+<li>利用函数重载，<em>继承</em> 与 <em>不继承</em> 返回不同的类型。</li>
+<li>利用sizeof，将不同的类型变成不同的长度。</li>
+<li>做一个相等判断，就可以知道它是 <em>继承</em> 还是 <em>不继承</em> 了。</li>
+</ol>
+<p>首先，创造两个长度不同的类型：</p>
+<pre><code>struct Small{
+    char data[2];
+};
+struct Big{
+    char data[4];
+};
+</code></pre>
+<p>其实这里写的2和4，
+完全是我随便写的，
+其实只要它们不相等就可以的。</p>
+<p>然后是函数重载和相等判断：</p>
+<pre><code>template&lt;typename Base, typename Derived&gt;
+class ConvertTester2{
+private:
+    static Small test_derived(Base);
+    static Big test_derived(...);
+public:
+    enum{test =
+        sizeof(
+            test_derived(
+                Derived()
+            )
+        ) == sizeof(
+            Small
+        )
+    };
+};
+</code></pre>
+<p>如果<code>Derived</code>继承自<code>Base</code>，
+<code>test_derived(Derived())</code>就会调用<code>static Small test_derived(Base);</code>函数，
+它的返回值类型就是<code>Small</code>，
+那么<code>sizeof(Small) == sizeof(Small)</code>就会是<code>true</code>。</p>
+<p>反之，就是<code>false</code>。</p>
+<p>在这里，我们看到，
+<code>test_derived</code>函数根本没有实现。
+这就印证上我们上面所说的，
+sizeof根本不会执行它求长的表达式。
+也就是说<code>test_derived</code>根本没有被执行过，
+所以<code>test_derived</code>只需要声明就可以，
+根本不需要实现。</p>
+<blockquote>
+<p>一个从来没有被执行过的函数，（大多数情况下）根本不需要写它的实现</p>
+</blockquote>
+<h2>还有问题？</h2>
+<p>费了这么半天劲，
+终于把我们的解决方案改成了编译期判断。
+那么它还有什么问题吗？</p>
+<p>有的。</p>
+<p>在 <em>设计模式</em> 中，
+有一种模式叫做 <em>单例模式</em> 。
+使用C++来实现 <em>单例模式</em> 的时候，
+为了保证实例的唯一，
+通常要将单例类的构造函数写成private的。</p>
+<p>这会对我们的代码造成什么影响？</p>
+<p>在上面的解决方案中，我们使用<code>Derived()</code>来得到<code>Derived</code>类的一个实例，
+如果<code>Derived</code>类的构造函数是private的，
+那么<code>Derived()</code>这一行就会报告编译错误。</p>
+<p>这给我们的解决方案提了一个难题：</p>
+<p>有没有什么办法，
+不通过构造函数就能够得到一个类的对象，
+而且还能适应各种不同类型的类？</p>
+<p>有的。</p>
+<p>记得我们之前讲到，
+sizeof根本不会执行它求长的表达式，
+所以我们完全可以给它提供一个 <em>假</em> 的对象，
+只需要让sizeof完成类型推导就可以了。</p>
+<p>比如，这样的一个函数：</p>
+<pre><code>Derived make_derived();
+</code></pre>
+<p>而且，由于sizeof的特点，
+这个函数根本不需要实现，
+只需要一个声明就可以了。</p>
+<p>完整代码如下：</p>
+<pre><code>template&lt;typename Base, typename Derived&gt;
+class ConvertTester3{
+private:
+    static Small test_derived(Base);
+    static Big test_derived(...);
+    static Derived make_derived();
+public:
+    enum{test = sizeof(test_derived(make_derived())) == sizeof(Small)};
+};
+</code></pre>
+<h2>全文完</h2></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

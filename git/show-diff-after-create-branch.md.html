@@ -1,0 +1,42 @@
+<html><head><title>git diff 显示创建分支后的修改 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>git diff 显示创建分支后的修改</h1>
+<p>从<code>develop</code>分支创建一个<code>feature</code>分支，
+经历了若干个<code>commit</code>之后，
+我想知道这个分支从创建到现在都发生了哪些修改。</p>
+<p>直接<code>git diff develop</code>是不行的，
+因为<code>develop</code>可能在这段时间也增加了好多内容。
+我不想看<code>develop</code>上增加的内容，
+只想看<code>feature</code>分支上发生的修改。</p>
+<p>难道要去记住创建<code>feature</code>分支时的commit编号吗？</p>
+<p>不！
+git提供了更简单的方法。</p>
+<h2>git diff 中2个点和3个点的区别</h2>
+<p>比如<code>A</code>和<code>B</code>是两个分支名，那么下面的命令</p>
+<pre><code>git diff A..B
+</code></pre>
+<p>可以用来比较两个分支的差异。</p>
+<p>这里我们用2个点来分隔分支名。</p>
+<p>如果你详细地看git diff的文档的话,</p>
+<pre><code>git help diff
+</code></pre>
+<p>你会发现一种3个点的用法：</p>
+<pre><code>git diff A...B
+</code></pre>
+<p>那么3个点是什么意思呢？</p>
+<p>答：
+它是用来比较<code>A和B的公共祖先</code>与<code>B</code>的差异。
+它相当于下面的命令：</p>
+<pre><code>git diff $(git-merge-base A B) B
+</code></pre>
+<h2>回到我们最初的问题</h2>
+<p><code>develop</code>分支和<code>feature</code>的公共祖先，
+事实上就是创建<code>feature</code>分支时的commit。</p>
+<p>所以我们可以通过下面的命令:</p>
+<pre><code>git diff develop...feature
+</code></pre>
+<p>来查看创建<code>feature</code>分支以来的修改。</p>
+<p>甚至地，
+如果我们的当前分支就是<code>feature</code>，
+我们可以省略第二个分支名，
+简写成:</p>
+<pre><code>git diff develop...
+</code></pre></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

@@ -1,0 +1,65 @@
+<html><head><title>安装debian时的"Standard system utilities"都包括哪些软件包? | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>安装debian时的"Standard system utilities"都包括哪些软件包?</h1>
+<p>在安装debian的时候，
+最后一步有个选择安装哪些软件包的选项，
+其中有一个选项叫"Standard system utilities"。</p>
+<p>看见有人问这个选项都包括哪些软件包，
+以及不装这些的话会不会有什么严重的后果。</p>
+<p>今天我就来回来一下。</p>
+<h2>debian官方wiki</h2>
+<p>https://wiki.debian.org/tasksel</p>
+<h2>本机执行一下</h2>
+<pre><code>$ tasksel --task-packages standard
+whois
+python2.6-minimal
+mlocate
+m4
+mime-support
+file
+exim4-base
+w3m
+libswitch-perl
+less
+dnsutils
+bsd-mailx
+apt-listchanges
+rpcbind
+doc-debian
+procmail
+dc
+perl-modules
+python-support
+bind9-host
+liblockfile-bin
+db5.1-util
+mutt
+nfs-common
+exim4-config
+reportbug
+texinfo
+python2.7
+time
+exim4
+python-minimal
+debian-faq
+krb5-locales
+libclass-isa-perl
+ftp
+lsof
+bash-completion
+at
+bc
+python-reportbug
+python
+perl
+exim4-daemon-light
+ncurses-term
+bzip2
+telnet
+python-apt
+</code></pre>
+<h2>我的观点</h2>
+<p>其中有些软件包还挺有用的，
+但是大多数我感觉都用不着。</p>
+<p>所以我一般选择不安装"Standard system utilities"，
+然后手动安装我自己需要的软件包。</p>
+<h2>全文完</h2></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

@@ -1,0 +1,295 @@
+<html><head><title>《C++元编程》第一节 方法指定 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>《C++元编程》第一节 方法指定</h1>
+<h2>问题描述</h2>
+<p>现在设计一种情景。</p>
+<p>我们某个项目中，需要适应多个不同的底层GUI库。
+在 <em>显示</em> 接口上，
+有的库用的是show，
+有的库用的是display。</p>
+<p>为了调用的方便，
+现在需要将接口统一。
+所以需要实现一个adapter类，
+来隐藏底层的实现细节。</p>
+<p>为了简化问题，
+现在将这个场景简化成以下形式：</p>
+<p>现在有四个类，
+<code>Worker_A</code>,
+<code>Worker_B</code>,
+<code>Worker_C</code>,
+<code>Worker_D</code>。</p>
+<p>其中，<code>Worker_A</code>和<code>Worker_B</code>只有一个 <code>show</code> 方法，
+<code>Worker_C</code>和<code>Worker_D</code>只有一个 <code>display</code> 方法。</p>
+<p>现在需要实现一个 <code>Adapter</code> 类，
+将 <em>显示</em> 接口统一成 <code>render</code>。</p>
+<p>而且一个重要的限制，
+不可以修改<code>Worker_A</code>,
+<code>Worker_B</code>,
+<code>Worker_C</code>,
+<code>Worker_D</code>的源代码。</p>
+<h2>使用一个条件判断</h2>
+<p>第一个想法就是使用条件判断一下，
+比如这样：</p>
+<pre><code>enum{RENDER_BY_SHOW, RENDER_BY_DISPLAY};
+
+template&lt;class Worker, int render_type&gt;
+class Adapter1{
+public:
+    void render(){
+        switch(render_type){
+        case RENDER_BY_SHOW:
+            _worker-&gt;show();
+            break;
+        case RENDER_BY_DISPLAY:
+            _worker-&gt;display();
+            break;
+        }
+    }
+private:
+    Worker* _worker;
+};
+</code></pre>
+<p>使用的时候，只需要这样：</p>
+<pre><code>Adapter1&lt;Worker_A, RENDER_BY_SHOW&gt; a1;
+a1.render();
+
+Adapter1&lt;Worker_C, RENDER_BY_DISPLAY&gt; c1;
+c1.render();
+</code></pre>
+<p>但是这样是不行的！</p>
+<p>因为根本编译不通过！</p>
+<p>四个Worker类，要么只有<code>show</code>方法，要么只有<code>display</code>方法。
+所以无论给<code>Adapter1</code>的第一个参数传哪个类型，</p>
+<pre><code>_worker-&gt;show();
+</code></pre>
+<p>或者</p>
+<pre><code>_worker-&gt;display();
+</code></pre>
+<p>这两个语句，
+肯定会有一行报编译错误的。</p>
+<p>因为编译器是不管条件判断的，
+它要认真、仔细地编译每一个语句。</p>
+<h2>使用函数重载</h2>
+<p>不能在运行期判断类型，
+必须在编译期来完成这个判断，
+很自然地，
+我们想到了函数重载。</p>
+<p>我们可以做一个简单的约定，
+比如，</p>
+<ul>
+<li><code>char</code> 类型表示使用show方法</li>
+<li><code>float</code> 类型表示使用display方法</li>
+</ul>
+<p>那么，代码就变成了这个样子：</p>
+<pre><code>template&lt;class Worker, typename switcher&gt;
+class Adapter2{
+public:
+    void render(){
+        render_dispatch(switcher());
+    }
+private:
+    void render_dispatch(char){
+        _worker-&gt;show();
+    }
+    void render_dispatch(float){
+        _worker-&gt;display();
+    }
+
+    Worker* _worker;
+};
+</code></pre>
+<p>然后调用的方式就变成了这个样子：</p>
+<pre><code>Adapter2&lt;Worker_A, char&gt; a2;
+a2.render();
+
+Adapter2&lt;Worker_C, float&gt; c2;
+c2.render();
+</code></pre>
+<p>可是，
+这样的写法看起来好奇怪，有木有！</p>
+<p>代码的可读性是很重要的。</p>
+<p>如果有人直接看调用的代码，
+他肯定会要吐槽，
+<code>char</code>和<code>float</code>到底表示的是神马呀！</p>
+<h2>将值转化为类型</h2>
+<p>我们希望的直观的调用方式应该是这个样子的：</p>
+<pre><code>Adapter3&lt;Worker_B, RENDER_BY_SHOW&gt; b3;
+b3.render();
+
+Adapter3&lt;Worker_D, RENDER_BY_DISPLAY&gt; d3;
+d3.render();
+</code></pre>
+<p>但是，这无法直接使用函数重载的方案。
+为什么？</p>
+<p>因为，
+<code>RENDER_BY_SHOW</code>和<code>RENDER_BY_DISPLAY</code>是 <em>值</em> ，
+而<code>char</code>和<code>float</code>是 <em>类型</em> 。</p>
+<p>函数重载只能用于 <em>类型</em> ，
+而不能用于 <em>值</em> 。</p>
+<p>我们需要将 <em>值</em> 转化为 <em>类型</em>。</p>
+<p>怎么做呢？（思考一下）</p>
+<p>其实一个很简单的方法就可以做到。</p>
+<pre><code>template&lt;int from_value&gt;
+class IntToType{
+public:
+    enum{value=from_value};
+};
+</code></pre>
+<p>有了这个类，代码只需要稍加修改就可以了。</p>
+<pre><code>template&lt;class Worker, int render_type&gt;
+class Adapter3{
+public:
+    void render(){
+        render_dispatch(IntToType&lt;render_type&gt;());
+    }
+private:
+    void render_dispatch(IntToType&lt;RENDER_BY_SHOW&gt;){
+        _worker-&gt;show();
+    }
+    void render_dispatch(IntToType&lt;RENDER_BY_DISPLAY&gt;){
+        _worker-&gt;display();
+    }
+
+    Worker* _worker;
+};
+</code></pre>
+<h2>省略参数</h2>
+<p>每次都需要指定<code>render_type</code>，
+这很麻烦。</p>
+<p>而且如果不注意的话，
+也很容易写错。</p>
+<p>所以我们希望用一段代码来保存<code>Worker_X</code>类到<code>render_type</code>的对应关系，
+这样每次只需要传一个<code>Worker_X</code>类，
+就可以自动的查找到对应的<code>render_type</code>。</p>
+<p>一种直接的方法是用函数来完成这个功能：</p>
+<pre><code>int WorkerToRenderType(Worker_A){
+    return RENDER_BY_SHOW;
+}
+
+int WorkerToRenderType(Worker_C){
+    return RENDER_BY_DISPLAY;
+}
+</code></pre>
+<p>但是，
+这种方法是不行的！</p>
+<p>理由是：
+函数的返回值是运行期才能确定的。</p>
+<p>而刚才我们说过，
+必须要在编译期就指定<code>render_type</code>。</p>
+<p>所以，
+有什么办法可以在编译期建立<code>Worker_X</code>类型到<code>render_type</code>的对应关系呢？
+（思考一下）</p>
+<p>模板的 <em>偏特化</em> 可以帮助我们做到。</p>
+<p>代码如下：</p>
+<pre><code>template&lt;class WorkerType&gt;
+class WorkerToRenderType{
+};
+
+template&lt;&gt;
+class WorkerToRenderType&lt;Worker_A&gt;{
+public:
+    enum{render_type = RENDER_BY_SHOW};
+};
+
+template&lt;&gt;
+class WorkerToRenderType&lt;Worker_C&gt;{
+public:
+    enum{render_type = RENDER_BY_DISPLAY};
+};
+</code></pre>
+<p>有了对应关系，
+我们就可以只提供一个<code>Worker_X</code>参数，
+剩下的<code>render_type</code>通过查询对应关系来获得。</p>
+<p>代码如下：</p>
+<pre><code>template&lt;class Worker&gt;
+class Adapter4{
+public:
+    void render(){
+        render_dispatch(
+            IntToType&lt;
+                WorkerToRenderType&lt;Worker&gt;::render_type
+            &gt;()
+        );
+    }
+private:
+    void render_dispatch(IntToType&lt;RENDER_BY_SHOW&gt;){
+        _worker-&gt;show();
+    }
+    void render_dispatch(IntToType&lt;RENDER_BY_DISPLAY&gt;){
+        _worker-&gt;display();
+    }
+
+    Worker* _worker;
+};
+</code></pre>
+<p>使用的时候只需要提供一个参数就可以了。</p>
+<pre><code>Adapter4&lt;Worker_A&gt; a4;
+a4.render();
+
+Adapter4&lt;Worker_B&gt; b4;
+b4.render();
+
+Adapter4&lt;Worker_C&gt; c4;
+c4.render();
+
+Adapter4&lt;Worker_D&gt; d4;
+d4.render();
+</code></pre>
+<h2>还有改进的余地</h2>
+<p>这个方案看起来已经很不错了。
+但是对于那些 <em>精益求精</em> 的人，
+还是可以提出一些需要改进的地方。</p>
+<h3>1. 应付类膨胀</h3>
+<p>目前我们有四个<code>Worker</code>类，
+所以提供了四个<code>WorkerToRenderType</code>的偏特化类。</p>
+<p>如果有一天，
+出现了第五个，第六个<code>Worker</code>类，
+或者更多，
+我们就需要在维护<code>WorkerToRenderType</code>上，
+做很多事情。</p>
+<p>而且一个重要的问题是，
+<code>WorkerToRenderType</code>是用模板实现的，
+所以它必须写在头文件里。
+这可能会产生大量的编译依赖，
+导致大面积的代码需要重新编译，
+可能会消耗大量的编译时间。</p>
+<p>这个问题，
+有一种很tricky的解决办法，
+以后的章节，
+（如果我想得起来），
+会讲到。</p>
+<h3>2. 提供工厂方法</h3>
+<p>将不同的<code>Worker</code>类作为参数传给<code>Adapter</code>，
+就会得到 <em>完全不同</em> 的类。</p>
+<p>它们之间没有继承关系，
+也没有共同的基类。</p>
+<p>造成的结果就是，
+我们没办法给这些类提供统一的工厂方法。</p>
+<p>这个问题，
+也有一种很tricky的解决办法，
+以后的章节，
+（如果我想得起来），
+会讲到。</p>
+<h3>3. 编译依赖问题</h3>
+<p>我们的主应用程序，
+可能只用到了<code>Worker</code>类中的一个。</p>
+<p>但是为了编译整个程序，
+我们需要依赖全部的<code>Worker</code>类。</p>
+<p>这在很多情况下，
+是不必要的，
+甚至可能是无法实现的。
+比如在Linux的X11环境下，
+根本不可能依赖MFC库。</p>
+<p>所以我们需要同时兼容各种不同的<code>Worker</code>类，
+但是又要做到彼此隔离。</p>
+<p>而且，
+如果我们希望发布此程序的二进制版本，
+并且能够适应不同环境，
+就需要程序在运行时，
+自动判断当前所处的环境。</p>
+<p>这并不是完全不可能实现，
+只是实现的方法很tricky。
+不在本系列文章想介绍的范围之内。</p>
+<h2>全文完</h2>
+<p>本节的主要内容就是这些。</p>
+<p>虽然目前还没有涉及到任何的元编程的东西，
+但是本节提到的三个重要的技术，
+是后面几节的基础。</p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

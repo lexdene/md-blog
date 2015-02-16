@@ -1,0 +1,100 @@
+<html><head><title>td网站的结构 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>td网站的结构</h1>
+<h2>关于名字</h2>
+<p>其实上目前我已经想好名字了，
+只是还在考虑购买域名的事情。
+最终的网站名字，
+还要取决于我能买到什么域名。</p>
+<h2>关于子域名与在线测试</h2>
+<h3>www</h3>
+<p>网站正式域名。</p>
+<h3>bugtrack</h3>
+<p>bug跟踪系统，
+对所有人开放。</p>
+<p>可以由用户提交网站的各种bug及修改意见，
+可以对bug进行讨论，
+可以查看bug修改进度。</p>
+<h3>frontend</h3>
+<p>前端测试域名。
+主要用于测试js、css的浏览器兼容性。</p>
+<p>这个域名对所有人开放，
+与www域名使用相同的数据库及后端代码，
+由网站团队测试9大浏览器的兼容性问题。</p>
+<p>包括：
+<em> ie6、ie7、ie8、ie9：这些浏览器只要求能够正确弹出 <em>本网站不支持ie10以下浏览器</em> 的提示即可。</em> ie10、chrome、firefox、safari、opera：这些浏览器要求能够正常展现网站的所有功能，并提供相同的视觉效果。</p>
+<h3>beta</h3>
+<p>beta测试域名。</p>
+<p>对所有人开放。
+使用独立的数据库及配置。</p>
+<p>在正式上www之前，需要在beta上停留至少一周时间。
+由网站的测试团队及任何网站用户查找bug。</p>
+<p>并且此域名只接受bug，
+不接受feature。
+以避免未经测试的新功能上线阻碍旧bug的修正。</p>
+<h3>*.feature</h3>
+<p>后端测试域名。</p>
+<p>每个域名对应git仓库中的一个feature分支。</p>
+<p>此类域名不对外开放，
+必须通过DNS劫持（如修改本地hosts文件等方法）才能够正常访问。</p>
+<p>每个域名使用独立的数据库及配置。</p>
+<p>由git的hook监测git仓库中产生的新分支。
+每当有新分支产生时，
+由shell / perl 脚本自动在apache上创建虚拟主机，
+并创建数据库和网站配置。</p>
+<p>每个新功能必须在此域名下经过严格的测试，
+才允许合并到beta域名。</p>
+<p>但是如果beta域名上正在测试前一个feature，
+合并工作就必须排队进行，
+以避免两个feature同时进入beta环境造成互相干扰，
+影响测试结果。</p>
+<h2>关于运行环境</h2>
+<h3>Debian wheezy</h3>
+<ul>
+<li>apt是我很喜欢的一个东西，可以靠它自动完成软件的下载，安装，配置工作。</li>
+<li>wheezy目前也算成熟，可以用于小规模的服务器环境。</li>
+</ul>
+<h3>apache</h3>
+<p>我使用apache就一个原因，熟悉。</p>
+<p>很多人跟我推荐nginx，说它速度快、配置简单。
+<em> 关于nginx速度快：td网站目前连100PV都不到，要那么快的速度干啥！等我的网站PV超过十万，再换nginx不迟。
+</em> 关于nginx配置简单：这点我承认。在看过nginx的文档之后，它确实简单。
+* 暂时不使用nginx的原因：目前已经积累了很多apache虚拟主机相关的shell脚本，逐项迁移到nginx，代价不小。</p>
+<h3>wsgi</h3>
+<p>wsgi接口相对比较成熟，而且速度也很快。</p>
+<p>其实主要原因还是我用的比较熟。</p>
+<h3>MySQL / MariaDB</h3>
+<p>我很希望能够使用MariaDB，
+但是目前网站还没有在MariaDB上测试过。
+所以需要严格地论证一下，
+看一下MariaDB的效果。</p>
+<h3>NoSQL</h3>
+<p>为了简化代码，
+"动态/新鲜事"类的功能可能会考虑使用NoSQL作为数据库。</p>
+<h2>关于开发工具，库，框架等</h2>
+<h3>依赖库原则</h3>
+<p>无论前端、后端的依赖库，均适用以下原则：</p>
+<pre><code>保证每个库托管在独立的git仓库中，保证可自由地独立升级。
+</code></pre>
+<h3>Python drape</h3>
+<p>Python drape框架是我比较喜欢的Python的web框架，
+主要原因是这个框架是我写的。</p>
+<h3>Markdown</h3>
+<p>我对所有的富文本编译器都没有好感，
+要么功能简单，
+要么功能奇怪，
+要么要在后端写复杂的防XSS的验证。
+只有Markdown还算可以。</p>
+<p>具体由前端还是后端处理Markdown，
+还在研究中。</p>
+<p>考虑到在编辑及预览时，
+减少服务器请求次数，
+目前倾向于前端的Markdown方案。</p>
+<h3>coffee</h3>
+<p>js使用coffee编写。</p>
+<h3>less</h3>
+<p>css使用less编写。</p>
+<h3>前端库</h3>
+<p>对于提供CDN的前端库，
+全部通过CDN访问。</p>
+<p>对于不提供CDN的前端库，
+由apache代理转发。
+这样做的理由：见依赖库原则。</p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

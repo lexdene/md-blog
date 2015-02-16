@@ -1,0 +1,51 @@
+<html><head><title>C++是很危险的：第一章 构造函数：第二节 构造函数与多态 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>C++是很危险的：第一章 构造函数：第二节 构造函数与多态</h1>
+<p>《C++是很危险的》中的代码全部来自网络及各种C++相关的书籍。
+目的不是为了谴责C++，
+而是希望大家注意C++中的某些细节。
+这些细节在实际工程中根本用不到，所以大家就当笑话看看就好。</p>
+<p>以下代码会输出什么？</p>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+class Base
+{
+public:
+    Base()
+    {
+        data=createNumber();
+    }
+    int getData()const
+    {
+        return data;
+    }
+protected:
+    virtual int createNumber()const
+    {
+        return 3;
+    }
+private:
+    int data;
+};
+
+class Derived : public Base
+{
+protected:
+    virtual int createNumber()const
+    {
+        return 4;
+    }
+};
+
+int main()
+{
+    Base *a=new Derived;
+    cout&lt;&lt;a-&gt;getData()&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<h2>答案</h2>
+<p>答案是3。</p>
+<h2>解释</h2>
+<p>在<code>C++</code>中，执行父类的构造函数时，子类的虚函数还未 <em>创建</em> 。</p>
+<p>其实说 <em>创建</em> 不是十分准确，不过可以暂时这么理解。</p></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>

@@ -1,0 +1,130 @@
+<html><head><title>《C++元编程》第三节  编译期断言 | 大象的blog</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="/static/markdown.css" rel="stylesheet" type="text/css" /></head><body><div class="markdown-content"><h1>《C++元编程》第三节  编译期断言</h1>
+<h2>问题描述</h2>
+<p>断言<code>assert</code>是开发中很有用的工具。
+通常我们使用的是 <em>执行期断言</em> ，
+它能够在执行期检查运行结果是否与预期的结果一致。</p>
+<p>但是，
+如果能把断言放在编译期，
+就可以更早地发现可能隐藏的问题。</p>
+<h2>需求分析</h2>
+<p>普通的 <em>执行期断言</em> ，
+通常都接受一个bool类型的参数。
+如果它为true，
+就什么也不发生。
+否则就报告错误，
+立即结束程序。</p>
+<p>我们的编译期断言，
+也按照这个思路来做。</p>
+<h2>如何实现</h2>
+<p>上一节我们讲过，
+编译期三大神器。</p>
+<p>这一节我们将会用到其中的模板偏特化。</p>
+<p>看下面的代码：</p>
+<pre><code>template&lt;bool&gt; struct assert0;
+template&lt;&gt; struct assert0&lt;true&gt;{};
+
+int main(){
+    assert0&lt;true&gt; _a;
+    assert0&lt;false&gt; _b;
+
+    return 0;
+}
+</code></pre>
+<p>那么<code>assert0</code>就是一个简单的编译期断言。</p>
+<p>如果给<code>assert0</code>传一个<code>true</code>，
+那么什么也不会发生。
+如果传一个<code>false</code>，
+编译期就会报错。
+因为根本不存在值为<code>false</code>的偏特化版本。</p>
+<h2>编译期判断继承关系</h2>
+<p>上一节我们讲判断两个类的继承关系的时候，
+费了好半天劲，
+把判断改成了编译期做的事情。</p>
+<p>这样改有什么意义呢？</p>
+<p><code>assert0</code>的参数必须是一个编译期确定的值，
+所以如果我们想在编译期断言两个类的继承关系，
+就必须在编译期判断继承关系。
+（这句话好绕，不过我觉得你应该能懂我想说什么。）</p>
+<p>结合上一节的内容，
+在编译期断言两个类的继承关系：</p>
+<pre><code>int main(){
+    assert0&lt;is_derived_from(BarBase, BarDerived)&gt; _a;
+    assert0&lt;is_derived_from(BarBase, Foo)&gt; _b;
+
+    return 0;
+}
+</code></pre>
+<p><code>BarDerived</code>继承自<code>BarBase</code>，
+所以第一句什么也不会发生。</p>
+<p><code>Foo</code>和<code>BarBase</code>没有继承关系，
+所以第二句会报告编译错误。</p>
+<h2>错误信息</h2>
+<p>刚才说，
+没有继承关系的时候，
+会报告编译错误。</p>
+<p>可是报告出来的编译错误是什么样的呢？</p>
+<pre><code>错误： 聚合‘assert0&lt;false&gt; _b’类型不完全，无法被定义
+</code></pre>
+<p>这尼马是什么意思啊！
+这错误信息能体现出神马断言啊！</p>
+<p>有没有办法改进一下这个错误信息呢？</p>
+<p>有一些很tricky的方法。
+比如这样：</p>
+<pre><code>template&lt;bool&gt; struct assert1;
+template&lt;&gt; struct assert1&lt;true&gt;{
+    assert1(...);
+};
+template&lt;&gt; struct assert1&lt;false&gt;{};
+
+#define assert2(expr, msg) { \
+    class Error_##msg{}; \
+    assert1&lt;(expr)&gt; _noname = Error_##msg();    \
+}
+
+int main(){
+    assert2(
+        is_derived_from(BarBase, BarDerived),
+        Is_Not_Derived
+    );
+    assert2(
+        is_derived_from(BarBase, Foo),
+        Is_Not_Derived
+    );
+
+    return 0;
+}
+</code></pre>
+<p>它报告的编译错误是：</p>
+<pre><code>请求从`Error_Is_Not_Derived`转换到非标量类型`assert1&lt;false&gt;`
+</code></pre>
+<p>虽然也看起来怪怪的，
+但是至少有<code>Error_Is_Not_Derived</code>，
+心理安慰了很多。</p>
+<p>那么这段代码是什么意思呢？</p>
+<p>首先看<code>struct assert1&lt;true&gt;</code>，
+它定义了一个构造函数，
+接受任意类型的参数。
+（上一节我们讲过三个点的意思）
+这样，
+任何类型的对象都可以通过 <em>隐式类型转化</em> 变成一个<code>struct assert1&lt;true&gt;</code>。</p>
+<p>但是<code>struct assert1&lt;false&gt;</code>则没有这样的构造函数，
+所以它不接受奇怪的类型向它的类型转化。</p>
+<p>在<code>assert2</code>这个宏里，
+我们又定义了一个奇怪的class，
+叫<code>Error_##msg</code>，
+<code>##</code>就是把<code>Error_</code>和<code>msg</code>做简单的字符串连接。</p>
+<p>为了保证连接之后是一个正确的类名，
+msg只能由_字母_ , <em>数字</em> , <em>下划线</em> 组成。</p>
+<p>再之后，
+将一个<code>Error_##msg</code>的对象转化成了一个<code>assert1&lt;(expr)&gt;</code>对象。</p>
+<p>如果<code>expr</code>为true，
+<code>struct assert1&lt;true&gt;</code>接受任何类型向它的类型转化，
+所以什么也不会发生。
+但是如果<code>expr</code>为false，
+就会出现编译错误。</p>
+<h2>C++11</h2>
+<p>在C++11中，
+新增了<code>static_assert</code>，
+它就是用来做编译期断言的，
+而且可以自定义编译错误信息。</p>
+<h2>全文完</h2></div><div class="bottom-area"><a href="/catalog.html">目录</a><a class="btn-idontknow" href="#">啦啦啦</a></div></body></html>
