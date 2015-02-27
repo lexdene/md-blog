@@ -74,6 +74,7 @@
 
 ;; disable electric indent mode
 (setq-default electric-indent-mode nil)
+(electric-indent-mode -1)
 
 ; coffee-mode
 ; cd ~/.emacs.d
