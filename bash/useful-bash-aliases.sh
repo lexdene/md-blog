@@ -32,7 +32,7 @@ extract() {
          echo "'$1' is not a valid file"
      fi
 }
- 
+
 #System info
 alias cmount="mount | column -t"
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -41,7 +41,7 @@ alias intercept="sudo strace -ff -e trace=write -e write=1,2 -p"
 alias meminfo='free -m -l -t'
 alias ps?="ps aux | grep"
 alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
- 
+
 #Network
 alias websiteget="wget --random-wait -r -p -e robots=off -U mozilla"
 alias listen="lsof -P -i -n"
@@ -49,7 +49,7 @@ alias port='netstat -tulanp'
 gmail() { curl -u "$1" --silent "https://mail.google.com/mail/feed/atom" | sed -e 's/<\/fullcount.*/\n/' | sed -e 's/.*fullcount>//'}
 alias ipinfo="curl ifconfig.me && curl ifconfig.me/host"
 getlocation() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep address|egrep 'city|state|country'|awk '{print $3,$4,$5,$6,$7,$8}'|sed 's\ip address flag \\'|sed 's\My\\';}
- 
+
 #Funny
 kernelgraph() { lsmod | perl -e 'print "digraph \"lsmod\" {";<>;while(<>){@_=split/\s+/; print "\"$_[0]\" -> \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -;}
 alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""

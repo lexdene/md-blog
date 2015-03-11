@@ -6,7 +6,7 @@
 * 男
 * 1989年生于辽宁省
 * 现居住于北京市
-* github 主页: https://github.com/lexdene/
+* github 主页: <https://github.com/lexdene/>
 
 ## 联系方式
 
@@ -18,7 +18,7 @@
 
 ### linkedin
 
-https://www.linkedin.com/pub/%E9%A1%B9-%E5%88%98/66/63/758
+<https://www.linkedin.com/pub/%E9%A1%B9-%E5%88%98/66/63/758>
 
 ## 编程语言, 框架, 工具
 
@@ -113,34 +113,34 @@ https://www.linkedin.com/pub/%E9%A1%B9-%E5%88%98/66/63/758
 
 * 语言: C++
 * 使用技术: Qt, TCP socket, 多线程
-* github 主页: https://github.com/lexdene/Dlut-Game-Platform
+* github 主页: <https://github.com/lexdene/Dlut-Game-Platform>
 * 代码行数：约10k
 
 ### C++ 相关 blog
 
-* 《gcc五分钟系列》: https://github.com/lexdene/gcc_five_minute
-* 《C++是很危险的》: https://github.com/lexdene/md-blog/tree/master/cpp_is_dangerous
-* 《C++与元编程》: https://github.com/lexdene/md-blog/blob/master/cpp
+* 《gcc五分钟系列》: <https://github.com/lexdene/gcc_five_minute>
+* 《C++是很危险的》: <https://github.com/lexdene/md-blog/tree/master/cpp_is_dangerous>
+* 《C++与元编程》: <https://github.com/lexdene/md-blog/blob/master/cpp>
 
 ### drape
 
 * 语言: Python
 * drape 是一个 web 后台框架
-* github 主页: https://github.com/lexdene/drape
+* github 主页: <https://github.com/lexdene/drape>
 * 支持 wsgi, url 路由, 链式 SQL 查询等功能
 
 ### hbml
 
 * 语言: Python
 * hbml 是一个 html 模板引擎
-* github 主页: https://github.com/lexdene/hbml
+* github 主页: <https://github.com/lexdene/hbml>
 * 语法借鉴了 haml 和 jade
 
 ### emacs 插件
 
-* gedit-mode: https://github.com/lexdene/gedit-mode
-* grep-at-point: https://github.com/lexdene/grep-at-point
-* compile-make: https://github.com/lexdene/compile-make
+* gedit-mode: <https://github.com/lexdene/gedit-mode>
+* grep-at-point: <https://github.com/lexdene/grep-at-point>
+* compile-make: <https://github.com/lexdene/compile-make>
 
 ## 期望薪水
 
