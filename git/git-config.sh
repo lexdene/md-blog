@@ -38,7 +38,7 @@ git config --global alias.ssd "stash drop"
 
 git config --global core.editor "emacs"
 
-git config --global push.default current
+git config --global push.default upstream
 
 git config --global mergetool.keepBackup false
 
