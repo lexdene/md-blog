@@ -54,7 +54,7 @@ template<typename Base, typename Derived>
 class ConvertTester1{
 public:
     static bool is_derived(){
-        is_derived_from(Derived());
+        return is_derived_from(Derived());
     }
 private:
     static bool is_derived_from(Base){
