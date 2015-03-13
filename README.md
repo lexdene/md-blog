@@ -4,4 +4,4 @@
 
 ## 作者
 
-google plus: [![google plus](http://i.imgur.com/yCsTjba.png)](https://plus.google.com/108046140542915878788)
+google plus: [![google plus](http://i.imgur.com/VlgBKQ9.png)](https://plus.google.com/108046140542915878788)
