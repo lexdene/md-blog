@@ -5,6 +5,7 @@
 (setq-default make-backup-files nil)
 (setq create-lockfiles nil)
 (setq-default indent-tabs-mode nil)
+(setq-default case-fold-search nil)
 ; newline at end of file
 (setq require-final-newline t)
 ; scroll
