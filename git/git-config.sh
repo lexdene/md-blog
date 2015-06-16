@@ -5,6 +5,7 @@ git config --global color.ui "auto"
 git config --global color.status "auto"
 
 git config --global alias.st "status"
+git config --global alias.lgdo "log --decorate --oneline"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 git config --global alias.ci "commit"
 git config --global alias.cia "commit --amend"
@@ -35,6 +36,19 @@ git config --global alias.rss "reset --soft"
 git config --global alias.ss "stash"
 git config --global alias.ssp "stash pop"
 git config --global alias.ssd "stash drop"
+git config --global alias.list-tags 'for-each-ref --format="%(color:yellow)tag %(objectname)%(color:reset)
+name:   %(refname:short)
+author: %(taggername) %(taggeremail)
+date:   %(taggerdate)
+
+    %(subject)
+
+commit: %(*objectname)
+author: %(*authorname) %(*authoremail)
+date:   %(*authordate)
+
+    %(*subject)
+" refs/tags'
 
 git config --global core.editor "emacs"
 
