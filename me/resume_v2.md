@@ -32,18 +32,19 @@
     * backbone
 * css / scss
     * bootstrap
-* Linux (Debian / Ubuntu)
+* Linux
+    * Debian
+    * 配置 apache, Python, MySQL 运行及开发环境
 * MySQL
+    * 曾兼职为某互联网创业公司优化 MySQL 查询性能
 * shell
     * 熟练使用 linux shell 常用命令, 能够编写 bash 脚本
 * git
-    * 曾在公司(AdMaster)内负责git培训与考核
+    * 曾在公司内负责git培训与考核
 * emacs
 * C++ 开发工具:
     * 能够使用 gcc, make, gdb 等常用工具
     * 能够编写 Makefile
-* web 后端开发环境
-    * 能够在 Debian 下配置 apache, Python, MySQL 运行及开发环境
 * web 前端开发
     * html5, css3
     * 适配手机端不同屏幕尺寸
@@ -61,7 +62,10 @@
 
 2011年6月至2013年1月
 
-* 主要负责 PC 客户端开发: C++, Qt, webkit
+* 主要负责 PC 客户端开发
+    * 使用 C++, Qt 实现客户端 GUI
+    * 在客户端内使用 webkit 显示 web 内容
+    * 使用 C++ 实现 API 使 webkit 中的 js 能够调用系统功能
 * 参与 web 后端开发: php, MySQL, apache, Jecat
 * 参与 web 前端开发: JavaScript, jQuery
 
@@ -69,7 +73,11 @@
 
 2013年3月至2014年2月
 
-* 主要负责 web 后端开发: Python, django, tornado, celery, mongodb, MySQL
+* 主要负责 web 后端开发
+    * 主要页面使用 Python, django
+    * 使用 tornado 实现 restful api
+    * 使用 celery, rabbitmq 将某些功能移至后台执行，加快页面响应速度
+    * 数据库使用 mongodb, MySQL
 * 参与 web 前端开发: JavaScript, css, CoffeeScript, bootstrap
 * 负责新同事的 git 培训与考核
 
@@ -77,8 +85,13 @@
 
 2014年2月至2014年9月
 
-* 主要负责 web 后端开发: Ruby, Ruby on Rails, MySQL, redis
+* 主要负责 web 后端开发
+    * 使用 Ruby on Rails 实现 restful api
+    * 数据库/缓存使用 MySQL, redis, memcache
 * 负责微信分享页面开发
+    * 在微信中展示内容页面
+    * 适配各种手机分辨率
+    * 使用 css3 使页面样式接近客户端 ui
 * 参与 SEO 优化
 * 参与 web 前端开发: CoffeeScript, scss, jQuery, bootstrap
 
@@ -86,7 +99,11 @@
 
 2014年10月至今
 
-* 主要负责 web 后端开发: Python, django, MySQL
+* 主要负责 web 后端开发
+    * 使用 django 实现 restful api
+    * 使用 tornado 实现 websocket 的 server 端
+    * 使用 celery 来处理耗时任务, 并将处理进度通过 Pika, rabbitmq 发送给 tornado, tornado 再通过 websocket 将进度通知给前端
+    * 数据库使用 MySQL
 * 负责服务器运维, 基于 fabric 的自动化部署
 * 参与前端开发: backbone, CoffeeScript, grunt
 
@@ -98,7 +115,7 @@
 * 两次参加 regional 均未获奖
 * 集训队队长
     * 担任大连理工大学 ACM/ICPC 竞赛集训队领队及新人培训/赛前集训主讲人
-    * 带领大连理工大学 ACM/ICPC 竞赛集训队获得过regional比赛2银1铜的成绩
+    * 带领大连理工大学 ACM/ICPC 竞赛集训队获得过 regional 比赛2银1铜的成绩
 * 选修课讲师
     * 曾在大连理工大学校级选修课《ACM算法实践》当过3学期的讲课人
 
