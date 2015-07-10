@@ -131,6 +131,9 @@ public:
     enum{test = sizeof(test_derived(make_derived())) == sizeof(Small)};
 };
 
+struct foo {};
+struct bar : private foo {};
+
 void main_part_3(){
     Printer p(3);
     // this will make a compile error
@@ -146,6 +149,14 @@ void main_part_3(){
     p.p(
         ConvertTester3<int, double>::test
     );
+    // p.p(
+    //     ConvertTester3<foo, bar>::test
+    // );
+    // p.p(
+    //     ConvertTester3<foo*, bar*>::test
+    // );
+    // bar *b = new bar;
+    // foo *f = b;
 }
 
 // make a macro
