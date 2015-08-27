@@ -6,7 +6,7 @@ git config --global color.status "auto"
 
 git config --global alias.st "status"
 git config --global alias.lgdo "log --decorate --oneline"
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 git config --global alias.ci "commit"
 git config --global alias.cia "commit --amend"
 git config --global alias.ciah "commit --amend -C HEAD" # 修改commit内容但不修改commit信息
