@@ -19,34 +19,30 @@
 
 <https://www.linkedin.com/pub/%E9%A1%B9-%E5%88%98/66/63/758>
 
-## 编程语言, 框架, 工具
+## 专业技能
 
-* C++
-    * STL, Qt, webkit
 * Python
-    * pep8, pylint
-    * PyQt, django, celery, web.py, tornado
-* JavaScript / CoffeeScript
-    * ajax, jQuery
-    * backbone
-* css / scss
-    * bootstrap
-* Linux
-    * Debian
-    * 配置 apache, Python, MySQL 运行及开发环境
-* MySQL
-    * 曾兼职为某互联网创业公司优化 MySQL 查询性能
-* shell
-    * 熟练使用 linux shell 常用命令, 能够编写 bash 脚本
-* git
-    * 曾在公司内负责git培训与考核
-* emacs
-* C++ 开发工具:
-    * 能够使用 gcc, make, gdb 等常用工具
-    * 能够编写 Makefile
+    * 熟练掌握 Django, Django REST framework 框架
+    * 了解 tornado, celery
+    * 了解 twisted 及异步编程
+    * 了解 requests, unittest 等常用库的使用方法
+    * 代码符合 pep8 规范
 * web 前端开发
-    * html5, css3
-    * 适配手机端不同屏幕尺寸
+    * 熟练掌握 CoffeeScript 语言
+    * 熟练掌握 jQuery 的使用，包括 ajax, 选择器, dom 操作, 事件等
+    * 了解 backbone, marionette, grunt
+    * 了解 scss 语言
+    * 了解 bootstrap 库
+    * 能够使用 scss 实现简单动画效果
+    * 了解 html5 中的 websocket, css3 动画等
+    * 了解手机端适配不同屏幕尺寸
+* linux
+    * 熟练使用 linux 常用命令
+    * 能够在 linux 环境安装并配置 nginx, virtualenv, uwsgi 等
+    * 能够编写 shell 脚本
+* git
+    * 熟练使用 git
+    * 曾在公司内负责git培训与考核
 
 ## 最喜欢的编程书籍
 
@@ -61,7 +57,7 @@
 
 2011年6月至2013年1月
 
-* 主要负责 PC 客户端开发
+* 独立完成 PC 客户端开发
     * 使用 C++, Qt 实现客户端 GUI
     * 在客户端内使用 webkit 显示 web 内容
     * 使用 C++ 实现 API 使 webkit 中的 js 能够调用系统功能
@@ -72,8 +68,8 @@
 
 2013年3月至2014年2月
 
-* 主要负责 web 后端开发
-    * 主要页面使用 Python, django
+* 主要工作: web 后端开发
+    * 主要页面使用 Django
     * 使用 tornado 实现 restful api
     * 使用 celery, rabbitmq 将某些功能移至后台执行，加快页面响应速度
     * 数据库使用 mongodb, MySQL
@@ -84,10 +80,10 @@
 
 2014年2月至2014年9月
 
-* 主要负责 web 后端开发
+* 主要工作: web 后端开发
     * 使用 Ruby on Rails 实现 restful api
     * 数据库/缓存使用 MySQL, redis, memcache
-* 负责微信分享页面开发
+* 独立完成微信分享页面开发
     * 在微信中展示内容页面
     * 适配各种手机分辨率
     * 使用 css3 使页面样式接近客户端 ui
@@ -98,12 +94,15 @@
 
 2014年10月至今
 
-* 主要负责 web 后端开发
-    * 使用 django 实现 restful api
+* 主要工作: web 后端开发
+    * 使用 Django, Django REST framework 实现 restful api
     * 使用 tornado 实现 websocket 的 server 端
-    * 使用 celery 来处理耗时任务, 并将处理进度通过 Pika, rabbitmq 发送给 tornado, tornado 再通过 websocket 将进度通知给前端
+    * 使用 celery 来处理耗时任务
+    * 使用 rabbitmq 在 celery, tornado 和 Django 之间进行通信
     * 数据库使用 MySQL
 * 负责服务器运维, 基于 fabric 的自动化部署
+* 参与分布式引擎开发
+    * 使用 twisted 作为主要框架
 * 参与前端开发: backbone, CoffeeScript, grunt
 
 ## 在校期间经历
