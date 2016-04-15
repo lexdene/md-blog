@@ -11,8 +11,9 @@
 ## 我讨厌的编程语言
 
 1. Java
-2. PHP
-3. C
+2. ActionScript
+3. PHP
+4. C
 
 ## 我喜欢的语法/语言特性
 
