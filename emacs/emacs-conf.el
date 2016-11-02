@@ -149,7 +149,8 @@
   (progn
     (global-set-key [f3] 'nopromp-grep-at-point)
     (global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
-    (global-set-key (kbd "M-g M-r 2") 'grep-at-point)))
+    (global-set-key (kbd "M-g M-r 2") 'grep-at-point)
+    (global-set-key (kbd "M-g M-r 3") 'grep-selected-text)))
 
 ; show file name
 (defun show-file-name ()
