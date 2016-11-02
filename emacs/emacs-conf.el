@@ -100,6 +100,7 @@
       (lambda()
         (setq coffee-tab-width 2)
         (setq tab-width 2)))
+    (add-hook 'coffee-mode-hook 'hs-minor-mode)
     (add-to-list 'ac-modes 'coffee-mode)))
 
 ; refresh file
