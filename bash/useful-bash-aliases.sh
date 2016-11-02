@@ -3,6 +3,11 @@ alias ls="ls --color=auto"
 alias ll="ls --color -al"
 alias grep='grep --color=auto'
 mcd() { mkdir -p "$1"; cd "$1";}
+mkdatedir(){
+    d=$(date '+%Y_%m_%d')
+    mkdir -p $d
+    cd $d
+}
 cls() { cd "$1"; ls;}
 backup() { cp "$1"{,.bak};}
 md5check() { md5sum "$1" | grep "$2";}
