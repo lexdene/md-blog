@@ -37,6 +37,10 @@
 ;; 2. plugins
 ;;
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
 ; load path
 ;; compare with `normal-top-level-add-subdirs-to-load-path`
 ;; this function:
