@@ -123,6 +123,7 @@
 ; js indent
 (setq js-indent-level 4)
 (setq js-auto-indent-flag nil)
+(add-to-list 'auto-mode-alist '("\\.es6\\'" . js-mode))
 
 ; vline
 ; download from http://www.emacswiki.org/emacs/download/vline.el
