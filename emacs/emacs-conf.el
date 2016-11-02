@@ -64,6 +64,14 @@
   "Insert date at point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
+(defun insert-date ()
+  "Insert date at point."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+(defun insert-time ()
+  "Insert date at point."
+  (interactive)
+  (insert (format-time-string "%H:%M:%S")))
 (global-set-key [f6] 'insert-datetime)
 
 ; linum mode
