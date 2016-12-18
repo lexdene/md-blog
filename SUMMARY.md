@@ -30,3 +30,4 @@
 * [C++是很危险的：第一章 构造函数：第四节 构造函数的调用](cpp_is_dangerous/1.4/1.4.md)
 * [如何在debian系统上禁用apt的pdiff更新机制](debian/apt_disable_pdiff.md)
 * [tornado, pika, async/await 以及 asynchronous iterator](python/tornado/pika-and-async.md)
+* [微信小程序 - 请求时自动在 title bar 显示 loading 图标](weChat/little-app/request-and-loading.md)
