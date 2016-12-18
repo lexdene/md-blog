@@ -1,0 +1,21 @@
+.markdown-section
+  counter-reset: chapter-lv-1
+
+  h2
+    counter-reset: chapter-lv-2
+
+    &:before
+      counter-increment: chapter-lv-1
+      content: counter(chapter-lv-1) ". "
+
+  h3
+    counter-reset: chapter-lv-3
+
+    &:before
+      counter-increment: chapter-lv-2
+      content: counter(chapter-lv-1) "." counter(chapter-lv-2) ". "
+
+  h4
+    &:before
+      counter-increment: chapter-lv-3
+      content: counter(chapter-lv-1) "." counter(chapter-lv-2) "." counter(chapter-lv-3) ". "
