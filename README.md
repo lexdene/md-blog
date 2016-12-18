@@ -1,6 +1,6 @@
 # 用markdown写博客
 
-目录见catalog.md
+在 gitbook 上阅读: https://www.gitbook.com/book/lexdene/md-blog
 
 ## 作者
 
