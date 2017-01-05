@@ -7,6 +7,9 @@ git config --global color.status "auto"
 git config --global alias.st "status"
 git config --global alias.lgdo "log --decorate --oneline"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+git config --global alias.lga "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+git config --global alias.lg1 "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+git config --global alias.lg2 "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 git config --global alias.ci "commit"
 git config --global alias.cia "commit --amend"
 git config --global alias.ciah "commit --amend -C HEAD" # 修改commit内容但不修改commit信息
@@ -57,3 +60,5 @@ git config --global push.default upstream
 git config --global mergetool.keepBackup false
 
 git config --global core.excludesfile ~/workspace/write/md-blog/git/git-ignore
+
+git config --global credential.helper 'cache --timeout=432000'
