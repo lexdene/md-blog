@@ -150,6 +150,16 @@
     (global-set-key (kbd "M-g c") 'compile-make-ex)
     (setq compilation-scroll-output t)))
 
+; flake8 current file
+(defun flake8 (file-name)
+  "run flake8 on specific file"
+  (interactive
+   (list
+    (let ((insert-default-directory nil))
+     (read-file-name "file: " nil (buffer-name) t (buffer-name)))))
+  (compile (format "flake8 %s" file-name)))
+(global-set-key (kbd "M-g f") 'flake8)
+
 ; grep at point
 (if (require 'grep-at-point nil t)
   (progn
