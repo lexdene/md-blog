@@ -222,6 +222,7 @@
 
 (if (require 'markdown-mode nil t)
   (progn
-    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))))
+    (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+    (setq markdown-indent-on-enter nil)))
 
 (add-to-list 'auto-mode-alist '("\\.hbs\\'". html-mode))
