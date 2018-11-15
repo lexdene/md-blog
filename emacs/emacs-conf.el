@@ -73,7 +73,7 @@
 (defun insert-python-encoding()
   "insert python encoding line."
   (interactive)
-  (insert "# -*- coding: utf-8 -*-"))
+  (insert "# -*- coding: utf-8 -*-\n"))
 (global-set-key [f12] 'insert-python-encoding)
 
 ; font size
