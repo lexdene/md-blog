@@ -86,6 +86,14 @@
 (if window-system
   (set-font-size 24))
 
+; camelcase to underscore
+(defun camel-to-underscore ()
+  "covert from camelcase to underscore"
+  (interactive)
+  (progn
+    (replace-regexp "\\([A-Z]\\)" "_\\1" nil (region-beginning) (region-end))
+    (downcase-region (region-beginning) (region-end))))
+
 ; linum mode
 (require 'linum)
 (global-linum-mode 1)
