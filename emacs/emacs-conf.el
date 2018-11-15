@@ -69,6 +69,13 @@
   (insert (format-time-string "%H:%M:%S")))
 (global-set-key [f6] 'insert-datetime)
 
+; insert python encoding
+(defun insert-python-encoding()
+  "insert python encoding line."
+  (interactive)
+  (insert "# -*- coding: utf-8 -*-"))
+(global-set-key [f12] 'insert-python-encoding)
+
 ; font size
 (defun set-font-size (font-size)
   "set font size"
