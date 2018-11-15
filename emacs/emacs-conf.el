@@ -24,16 +24,6 @@
 (setq column-number-mode t)
 ; another key of goto-line
 (global-set-key (kbd "M-s") 'goto-line)
-; default font
-;; (setq font-size 14)
-(setq font-size 24)
-(set-face-attribute 'default nil :font (format "Monaco %d" font-size))
-; Chinese Font
-(if (fboundp 'set-fontset-font)
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset (font-spec :family "STHeiti"
-                                         :size font-size))))
 ; transparent
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 (add-to-list 'default-frame-alist '(alpha 85 85))
@@ -78,6 +68,23 @@
   (interactive)
   (insert (format-time-string "%H:%M:%S")))
 (global-set-key [f6] 'insert-datetime)
+
+; font size
+(defun set-font-size (font-size)
+  "set font size"
+  (interactive
+   (list
+    (read-number "font size: " 14)))
+  (progn
+    (set-face-attribute 'default nil :font (format "Monaco %d" font-size))
+    ; Chinese Font
+    (if (fboundp 'set-fontset-font)
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        (set-fontset-font (frame-parameter nil 'font)
+                          charset (font-spec :family "STHeiti"
+                                             :size font-size))))))
+(if window-system
+  (set-font-size 24))
 
 ; linum mode
 (require 'linum)
