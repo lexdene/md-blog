@@ -15,27 +15,18 @@
 
 	echo ZWxlcGhhbnRfbGl1QG1haWwuZGx1dC5lZHUuY24K | base64 -d
 
-### linkedin
-
-<https://www.linkedin.com/pub/%E9%A1%B9-%E5%88%98/66/63/758>
-
 ## 专业技能
 
 * Python
-    * 熟练掌握 Django, Django REST framework 框架
-    * 了解 tornado, celery
-    * 了解 twisted 及异步编程
-    * 了解 requests, unittest 等常用库的使用方法
-    * 代码符合 pep8 规范
+    * 掌握常见的 web 框架的基本使用方法, 如 flask, Django 等
+    * 了解 tornado, celery, twisted, requests 等常用库
+    * 熟悉 unittest 库, 所有负责的项目的测试覆盖率可以达到 70% 以上, 少数稳定项目可以达到 90%
+    * 代码符合 flake8, isort 等工具的格式要求
 * web 前端开发
-    * 熟练掌握 CoffeeScript 语言
-    * 熟练掌握 jQuery 的使用，包括 ajax, 选择器, dom 操作, 事件等
-    * 了解 backbone, marionette, grunt
-    * 了解 scss 语言
-    * 了解 bootstrap 库
-    * 能够使用 scss 实现简单动画效果
-    * 了解 html5 中的 websocket, css3 动画等
-    * 了解手机端适配不同屏幕尺寸
+    * 了解 React, Vue 等常见框架
+    * 了解 React Redux 的基本理念和基础使用方法
+    * 了解 babel, sass, webpack, eslint 等工具的基本使用
+    * 了解 es6, es7 中的常用新增语法
 * linux
     * 熟练使用 linux 常用命令
     * 能够在 linux 环境安装并配置 nginx, virtualenv, uwsgi 等
@@ -43,13 +34,6 @@
 * git
     * 熟练使用 git
     * 曾在公司内负责git培训与考核
-
-## 最喜欢的编程书籍
-
-1. Modern C++ Design : Generic Programming and Design Patterns Applied
-    * 作者: Andrei Alexandrescu
-2. Design Patterns: Elements of Reusable Object-Oriented Software
-    * 作者: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 
 ## 工作经历
 
@@ -111,8 +95,22 @@
 
 * 主要工作: 后端 api 开发
     * 使用 Python 为客户端提供相关 api
-* 主要工作: 微信小程序开发
-    * 使用 CoffeeScript, sass, pug, gulp 等语言/工具开发微信小程序
+    * 使用 flask 和其它一些豆瓣自研 web 框架
+* 参与某些项目的后台开发
+    * 项目A:
+        * 前端使用 React Redux
+        * 后端使用 GraphQL
+    * 项目B:
+        * 前端使用 Vue
+        * 后端使用 flask, 通过 restful api 与前端通信
+* 参与某些实验室项目
+    * 项目C:
+        * 使用 asyncio, starlette 等异步编程库/框架
+        * 使用 dataloader 合并和减少数据库请求
+        * 在其它条件相同的情况下, 并发量有 20 倍以上的提升
+    * 项目D:
+        * 后端使用 GraphQL 声明基本的数据结构
+        * 前端解析 GraphQL, 自动生成后台页面, 包括展示 table, 筛选 form, 创建/修改 form
 
 ## 在校期间经历
 
