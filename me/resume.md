@@ -3,9 +3,10 @@
 ## 基本信息
 
 * 男
-* 1989年生于辽宁省
+* 1989年出生于辽宁省
 * 现居住于北京市
 * github 主页: <https://github.com/lexdene/>
+* 2019 年 3 月至今, 正在利用业余时间攻读成人本科学历
 
 ## 联系方式
 
@@ -13,10 +14,15 @@
 
 在Linux的终端中输入以下内容可以看到我的E-mail地址：
 
-	echo ZWxlcGhhbnRfbGl1QG1haWwuZGx1dC5lZHUuY24K | base64 -d
+	echo bGV4ZGVuZUAxNjMuY29tCg== | base64 -d
 
 ## 专业技能
 
+* docker 与 kubernetes
+    * 了解 docker image, docker container 等使用方法
+    * 能够编写 Dockerfile
+    * 了解 kubernetes 中常用的几种资源
+    * 能够使用 kubernetes 部署和运维应用
 * Python
     * 掌握常见的 web 框架的基本使用方法, 如 flask, Django 等
     * 了解 tornado, celery, twisted, requests 等常用库
@@ -29,7 +35,6 @@
     * 了解 es6, es7 中的常用新增语法
 * linux
     * 熟练使用 linux 常用命令
-    * 能够在 linux 环境安装并配置 nginx, virtualenv, uwsgi 等
     * 能够编写 shell 脚本
 * git
     * 熟练使用 git
@@ -91,11 +96,13 @@
 
 ### 豆瓣
 
-2016年9月至今
+#### 后端工程师
+
+2016年9月至2020年3月
 
 * 主要工作: 后端 api 开发
-    * 使用 Python 为客户端提供相关 api
-    * 使用 flask 和其它一些豆瓣自研 web 框架
+    * 负责豆瓣时间的版本迭代中后端 api 及运营后台的开发与维护
+    * 参与豆瓣小组的版本迭代中后端 api 及运营后台的开发与维护
 * 参与某些项目的后台开发
     * 项目A:
         * 前端使用 React Redux
@@ -112,58 +119,37 @@
         * 后端使用 GraphQL 声明基本的数据结构
         * 前端解析 GraphQL, 自动生成后台页面, 包括展示 table, 筛选 form, 创建/修改 form
 
+#### 系统开发工程师（云平台）
+
+2020年3月至今
+
+* 主要工作: dae 的开发与维护
+    * docker 的日常升级, 各种 package 的更新
+    * kubernetes 相关的开发与维护
+* 参与
+    * ci 系统的开发与维护
+    * 推进升级 Python3
+
 ## 在校期间经历
-
-### ACM/ICPC
-
-* 东北地区二等奖(2次)
-* 两次参加 regional 均未获奖
-* 集训队队长
-    * 担任大连理工大学 ACM/ICPC 竞赛集训队领队及新人培训/赛前集训主讲人
-    * 带领大连理工大学 ACM/ICPC 竞赛集训队获得过 regional 比赛2银1铜的成绩
-* 选修课讲师
-    * 曾在大连理工大学校级选修课《ACM算法实践》当过3学期的讲课人
 
 ### 教育经历
 
 * 2007年09月，考入大连理工大学土木工程专业。
 * 2011年03月，由于痴迷编程，导致荒废学业，被大连理工大学开除。
+* 2019年03月至今, 正在北京航空航天大学攻读成人本科学历。
 
-## 业余项目
+### ACM/ICPC
 
-### DGP游戏平台
+* 东北地区二等奖(2次, 2009年, 2010年)
+* 两次参加 regional 均未获奖(2009年, 2010年)
+* 集训队队长
+    * 担任大连理工大学 ACM/ICPC 竞赛集训队领队及新人培训/赛前集训主讲人(2009年)
+    * 带领大连理工大学 ACM/ICPC 竞赛集训队获得过 regional 比赛2银1铜的成绩(2010年)
+* 选修课讲师
+    * 曾在大连理工大学校级选修课《ACM算法实践》当过3学期的讲课人(2010年至2011年)
 
-* 语言: C++
-* 使用技术: Qt, TCP socket, 多线程
-* github 主页: <https://github.com/lexdene/Dlut-Game-Platform>
-* 代码行数：约10k
+## 对公司的期望
 
-### C++ 相关 blog
-
-* 《gcc五分钟系列》: <https://github.com/lexdene/gcc_five_minute>
-* 《C++是很危险的》: <https://github.com/lexdene/md-blog/tree/master/cpp_is_dangerous>
-* 《C++与元编程》: <https://github.com/lexdene/md-blog/blob/master/cpp>
-
-### drape
-
-* 语言: Python
-* drape 是一个 web 后台框架
-* github 主页: <https://github.com/lexdene/drape>
-* 支持 wsgi, url 路由, 链式 SQL 查询等功能
-
-### hbml
-
-* 语言: Python
-* hbml 是一个 html 模板引擎
-* github 主页: <https://github.com/lexdene/hbml>
-* 语法借鉴了 haml 和 jade
-
-### emacs 插件
-
-* gedit-mode: <https://github.com/lexdene/gedit-mode>
-* grep-at-point: <https://github.com/lexdene/grep-at-point>
-* compile-make: <https://github.com/lexdene/compile-make>
-
-## 期望薪水
-
-250元/小时
+* 每周工作时长不超过 40 小时，“必要”时候，可以延长至 42 小时
+* 每年“必要”发生的次数不超过 4 次
+* 月薪 4 万元人民币以上
