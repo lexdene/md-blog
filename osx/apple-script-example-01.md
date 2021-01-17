@@ -19,8 +19,8 @@
 
 将以下代码粘贴进去:
 
-    on open location URL
-        set the clipboard to URL
+    on open location this_URL
+        set the clipboard to this_URL
     end open location
 
 点击保存，
