@@ -108,8 +108,7 @@
 (global-linum-mode 1)
 
 ; auto complete
-; apt-get install emacs-goodies-el
-; apt-get install auto-complete-el
+; M-x package-install [RET] auto-complete [RET]
 (require 'auto-complete-config)
 ; case sensitive matching
 (setq ac-ignore-case nil)
