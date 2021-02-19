@@ -98,11 +98,6 @@
 (global-auto-complete-mode t)
 (ac-config-default)
 
-; hide-region
-; https://www.emacswiki.org/emacs/hide-region.el
-; wget http://www.emacswiki.org/emacs/download/hide-region.el
-(require 'hide-region)
-
 ;; disable electric indent mode
 (setq-default electric-indent-mode nil)
 (electric-indent-mode -1)
