@@ -78,23 +78,6 @@
   (insert "# -*- coding: utf-8 -*-\n"))
 (global-set-key [f12] 'insert-python-encoding)
 
-; font size
-(defun set-font-size (font-size)
-  "set font size"
-  (interactive
-   (list
-    (read-number "font size: " 14)))
-  (progn
-    (set-face-attribute 'default nil :font (format "Monaco %d" font-size))
-    ; Chinese Font
-    (if (fboundp 'set-fontset-font)
-      (dolist (charset '(kana han symbol cjk-misc bopomofo))
-        (set-fontset-font (frame-parameter nil 'font)
-                          charset (font-spec :family "STHeiti"
-                                             :size font-size))))))
-(if window-system
-  (set-font-size 24))
-
 ; camelcase to underscore
 (defun camel-to-underscore ()
   "covert from camelcase to underscore"
