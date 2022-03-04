@@ -7,7 +7,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default case-fold-search nil)
 ; newline at end of file
-(setq require-final-newline t)
+; (setq require-final-newline t)
 ; scroll
 (setq scroll-step 1)
 ; tab
@@ -38,7 +38,7 @@
 (require 'package)
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-                         ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
+                         ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
 (package-initialize)
 
 ; load path
@@ -174,8 +174,9 @@
   (progn
     (global-set-key [f3] 'nopromp-grep-at-point)
     (global-set-key (kbd "M-g M-r 1") 'nopromp-grep-at-point)
-    (global-set-key (kbd "M-g M-r 2") 'grep-at-point)
-    (global-set-key (kbd "M-g M-r 3") 'grep-selected-text)))
+    (global-set-key (kbd "M-g M-r 2") 'grep-previous-command)
+    (global-set-key (kbd "M-g M-r 3") 'grep-at-point)
+    (global-set-key (kbd "M-g M-r 4") 'grep-selected-text)))
 
 ; show file name
 (defun show-file-name ()
@@ -188,13 +189,9 @@
 ; show paren mode
 (show-paren-mode t)
 
-(if (require 'python nil t)
-  (progn
-    (add-hook 'python-mode-hook
-      (lambda()
-        (setq tab-width 4)))
-    (add-to-list 'auto-mode-alist
-      '("\\.tac\\'" . python-mode))))
+; M-x package-install [RET] python-mode [RET]
+(require 'python-mode)
+(autoload 'python-mode "python-mode" "Python Mode." t)
 
 (require 'ruby-mode)
 (add-to-list 'auto-mode-alist
