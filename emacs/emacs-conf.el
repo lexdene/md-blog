@@ -27,6 +27,9 @@
 ; transparent
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 (add-to-list 'default-frame-alist '(alpha 85 85))
+; faces
+(custom-set-faces
+ '(default ((t (:family "Ubuntu Mono" :foundry "DAMA" :slant normal :weight normal :height 181 :width normal)))))
 
 ;;
 ;; 2. plugins
