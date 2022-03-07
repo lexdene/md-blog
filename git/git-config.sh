@@ -53,7 +53,7 @@ date:   %(*authordate)
     %(*subject)
 " refs/tags'
 
-git config --global core.editor "emacs"
+git config --global core.editor "emacs -nw"
 
 git config --global push.default upstream
 
@@ -62,3 +62,4 @@ git config --global mergetool.keepBackup false
 git config --global core.excludesfile ~/workspace/write/md-blog/git/git-ignore
 
 git config --global credential.helper 'cache --timeout=432000'
+# git config --global core.pager 'less -F -X'
