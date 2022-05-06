@@ -125,10 +125,16 @@
 )
 (global-set-key [f5] 'refresh-file)
 
-;;启用时间显示
-(setq display-time-format " %Y-%m-%d %A %H:%M ")
-(setq display-time-interval 10)
-(display-time-mode 1)
+;; about mode line
+(which-func-mode 1)
+;; (setq display-time-format " %Y-%m-%d %A %H:%M ")
+;; (setq display-time-interval 10)
+(display-time-mode -1)
+(setq-default mode-line-format
+   (quote
+    ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification " " mode-line-position mode-line-misc-info mode-line-modes
+     (vc-mode vc-mode)
+     mode-line-end-spaces)))
 
 ; white space
 ;(global-whitespace-mode 1)
